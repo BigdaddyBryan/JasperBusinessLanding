@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Missie Weerbaarheid | De Definitieve Ervaring</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-background"></div>
+      <a href="#hero" class="header-logo" aria-label="Home">
+        <svg
+          width="45"
+          height="45"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50 0L100 25V75L50 100L0 75V25L50 0Z"
+            fill="var(--color-primary)"
+          />
+          <path
+            d="M50 15L85 32.5V67.5L50 85L15 67.5V32.5L50 15Z"
+            fill="var(--color-dark)"
+          />
+        </svg>
+      </a>
+      <button class="header-menu-toggle" aria-label="Open menu">
+        <span class="text">Menu</span>
+        <span class="icon">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </header>
+
+    <div class="nav-overlay">
+      <div class="nav-links-container">
+        <a
+          href="#over-ons"
+          class="nav-link"
+          data-img="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
+          ><span><span class="num">01</span> Over Ons</span></a
+        >
+        <a
+          href="#programma"
+          class="nav-link"
+          data-img="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop"
+          ><span><span class="num">02</span> Programma</span></a
+        >
+        <a
+          href="#reviews"
+          class="nav-link"
+          data-img="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1974&auto=format&fit=crop"
+          ><span><span class="num">03</span> Reviews</span></a
+        >
+        <a
+          href="#contact"
+          class="nav-link"
+          data-img="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?q=80&w=2070&auto=format&fit=crop"
+          ><span><span class="num">04</span> Contact</span></a
+        >
+      </div>
+    </div>
+    <div class="nav-hover-image"></div>
+
+    <main>
+      <section id="hero">
+        <div class="video-background">
+          <video
+            playsinline
+            autoplay
+            muted
+            loop
+            poster="placeholder-poster.jpg"
+          >
+            <source
+              src="https://assets.mixkit.co/videos/preview/mixkit-man-running-on-a-road-in-the-middle-of-a-forest-42823-large.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1 class="hero-title animate-on-scroll">
+            BLIJF STAAN. HOE DE WERELD OOK VERANDERT.
+          </h1>
+          <p class="animate-on-scroll" data-delay="0.2">
+            Weerbaarheidstrainingen door actieve militairen. Bewezen praktijk
+            voor iedereen die mentaal en fysiek onbreekbaar wil worden.
+          </p>
+          <a
+            href="#contact"
+            class="btn btn-primary animate-on-scroll"
+            data-delay="0.4"
+            >START DE MISSIE</a
+          >
+        </div>
+      </section>
+
+      <section id="over-ons">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-text-content animate-on-scroll">
+              <h2>GEBOUWD OP ERVARING</h2>
+              <h3>Onze missie is simpel: de beste versie van jezelf smeden.</h3>
+              <p>
+                Wij geloven niet in shortcuts. We geloven in discipline,
+                doorzettingsvermogen en de kracht van gedeelde ervaring. Onze
+                methodes zijn geslepen in de meest veeleisende omgevingen en nu
+                beschikbaar voor jou.
+              </p>
+              <h4>WIJ TRAINEN WAT WE ZELF LEVEN.</h4>
+            </div>
+            <div class="about-image-wrapper animate-on-scroll" data-delay="0.2">
+              <img
+                src="https://i.imgur.com/r0aLht3.png"
+                alt="Trainer Robert Rutjes in actie"
+              />
+            </div>
+          </div>
+          <div class="trainers-grid">
+            <div class="trainer-profile animate-on-scroll">
+              <img src="https://i.imgur.com/r0aLht3.png" alt="Robert Rutjes" />
+              <h5>Robert Rutjes</h5>
+              <p>
+                Expert in mentale veerkracht en fysieke paraatheid. Brengt
+                jarenlange operationele ervaring naar elke training.
+              </p>
+            </div>
+            <div class="trainer-profile animate-on-scroll" data-delay="0.2">
+              <img
+                src="https://i.imgur.com/kSj9s2M.jpg"
+                alt="Jasper van Rooijen"
+              />
+              <h5>Jasper van Rooijen</h5>
+              <p>
+                Specialist in stressmanagement en teamprestaties. Confronterend,
+                eerlijk en gefocust op resultaat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="programma">
+        <div class="container">
+          <h2 class="animate-on-scroll">ONS PROGRAMMA</h2>
+          <div class="program-grid">
+            <div class="program-card animate-on-scroll" data-delay="0">
+              <i class="fas fa-brain"></i>
+              <h4>MENTALE WEERBAARHEID</h4>
+            </div>
+            <div class="program-card animate-on-scroll" data-delay="0.1">
+              <i class="fas fa-heart-pulse"></i>
+              <h4>EMOTIONELE STABILITEIT</h4>
+            </div>
+            <div class="program-card animate-on-scroll" data-delay="0.2">
+              <i class="fas fa-dumbbell"></i>
+              <h4>FYSIEKE KRACHT</h4>
+            </div>
+            <div class="program-card animate-on-scroll" data-delay="0.3">
+              <i class="fas fa-users"></i>
+              <h4>SOCIALE DYNAMIEK</h4>
+            </div>
+            <div class="program-card animate-on-scroll" data-delay="0.4">
+              <i class="fas fa-shield-halved"></i>
+              <h4>PRAKTISCHE PARAATHEID</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="container">
+          <h2 class="animate-on-scroll">WAT ONZE DEELNEMERS ZEGGEN</h2>
+          <div class="swiper animate-on-scroll" data-delay="0.2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p>
+                  "Een absolute game-changer. De directe aanpak en no-nonsense
+                  mentaliteit hebben mijn perspectief volledig veranderd."
+                </p>
+                <span>- Mark T., Ondernemer</span>
+              </div>
+              <div class="swiper-slide">
+                <p>
+                  "Ik dacht dat ik fit was. Deze training heeft me laten zien
+                  wat echte fysieke en mentale kracht is. Onvergetelijk."
+                </p>
+                <span>- Linda S., Manager</span>
+              </div>
+              <div class="swiper-slide">
+                <p>
+                  "De beste teambuilding die we ooit hebben gehad. Ons team is
+                  hechter en effectiever dan ooit tevoren."
+                </p>
+                <span>- CEO, Tech Bedrijf</span>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container animate-on-scroll">
+          <h2>KLAAR VOOR DE UITDAGING?</h2>
+          <p>
+            Jouw transformatie begint hier. Neem contact op voor informatie over
+            programma's en maatwerk.
+          </p>
+          <form class="contact-form">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder=" "
+              /><label for="name">Uw Naam</label>
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder=" "
+              /><label for="email">Uw E-mailadres</label>
+            </div>
+            <div class="form-group">
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder=" "
+              ></textarea
+              ><label for="message">Uw Bericht</label>
+            </div>
+            <button type="submit" class="btn btn-primary">VERSTUUR</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <p>&copy; 2025 Missie Weerbaarheid. Gesmeed voor de top.</p>
+    </footer>
+  </body>
+</html>
