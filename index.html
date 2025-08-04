@@ -199,40 +199,83 @@
         </div>
       </section>
       <section id="contact">
-        <div class="container animate-on-scroll">
-          <h2>KLAAR VOOR DE UITDAGING?</h2>
-          <p>Jouw transformatie begint hier. Neem contact op.</p>
-          <form class="contact-form">
-            <div class="form-group">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder=" "
-              /><label for="name">Uw Naam</label>
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-info animate-on-scroll">
+              <h2>KLAAR VOOR DE<br />UITDAGING?</h2>
+              <p>
+                Uw transformatie begint hier. Een bericht is de eerste stap. Wij
+                nemen persoonlijk contact op voor een vrijblijvend gesprek.
+              </p>
+
+              <div class="contact-details">
+                <h3>Directe Lijn</h3>
+                <a href="mailto:intake@missieweerbaarheid.nl"
+                  >intake@missieweerbaarheid.nl</a
+                >
+                <a href="tel:+31612345678">+31 6 1234 5678</a>
+              </div>
+
+              <div class="contact-socials">
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
             </div>
-            <div class="form-group">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder=" "
-              /><label for="email">Uw E-mailadres</label>
+
+            <div class="contact-form-wrapper animate-on-scroll" data-delay="2">
+              <form id="contact-form">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder=" "
+                  />
+                  <label for="name">Uw Naam</label>
+                  <span class="focus-border"></span>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder=" "
+                  />
+                  <label for="email">Uw E-mailadres</label>
+                  <span class="focus-border"></span>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder=" "
+                  ></textarea>
+                  <label for="message">Uw Bericht</label>
+                  <span class="focus-border"></span>
+                </div>
+                <button type="submit" class="btn btn-submit">
+                  <span class="btn-text">Verstuur</span>
+                  <span class="btn-loader"></span>
+                </button>
+              </form>
+              <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Bericht ontvangen!</h3>
+                <p>
+                  Bedankt voor uw interesse. We nemen zo snel mogelijk contact
+                  met u op.
+                </p>
+              </div>
             </div>
-            <div class="form-group">
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                placeholder=" "
-              ></textarea
-              ><label for="message">Uw Bericht</label>
-            </div>
-            <button type="submit" class="btn btn-primary">VERSTUUR</button>
-          </form>
+          </div>
         </div>
       </section>
     </main>

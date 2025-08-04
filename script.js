@@ -18,6 +18,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- 5. INTERACTIEVE CONTACT FORMULIER LOGIC ---
+  const contactForm = document.querySelector("#contact-form");
+  if (contactForm) {
+    const submitBtn = contactForm.querySelector(".btn-submit");
+    const successMessage = document.querySelector(".success-message");
+
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault(); // Voorkom standaard formulier verzending
+
+      // 1. Toon de laad-status op de knop
+      submitBtn.classList.add("loading");
+
+      // 2. Simuleer een netwerkverzoek (vervang dit later met echte logica)
+      setTimeout(() => {
+        // 3. Toon de succes-status op de knop
+        submitBtn.classList.remove("loading");
+        submitBtn.classList.add("success");
+        submitBtn.querySelector(".btn-text").innerHTML =
+          '<i class="fas fa-check"></i>';
+
+        // 4. Verberg het formulier en toon de succesmelding
+        setTimeout(() => {
+          contactForm.style.opacity = "0";
+          contactForm.style.visibility = "hidden";
+          successMessage.classList.add("is-visible");
+        }, 500); // Korte wachttijd na het tonen van het vinkje
+      }, 2000); // Simuleer 2 seconden laadtijd
+    });
+  }
+
   // --- 2. IMMERSIVE NAVIGATION OVERLAY LOGIC ---
   const menuToggle = document.querySelector(".header-menu-toggle");
   const navOverlay = document.querySelector(".nav-overlay");
