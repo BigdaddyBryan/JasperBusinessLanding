@@ -5,17 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (headerBg) {
     window.addEventListener("scroll", () => {
-      if (lastScrollY < window.scrollY && window.scrollY > 150) {
-        // Scrolled down
-        headerBg.classList.remove("is-visible");
-      } else if (window.scrollY > 50) {
-        // Scrolled up
+      const currentScrollY = window.scrollY;
+      // Toon de achtergrond alleen als je omhoog scrollt of als je al bovenaan bent maar het menu open is
+      if (currentScrollY < lastScrollY && currentScrollY > 50) {
         headerBg.classList.add("is-visible");
+      } else if (currentScrollY <= 50) {
+        headerBg.classList.remove("is-visible");
       } else {
-        // At top of page
         headerBg.classList.remove("is-visible");
       }
-      lastScrollY = window.scrollY;
+      lastScrollY = currentScrollY;
     });
   }
 
@@ -23,49 +22,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".header-menu-toggle");
   const navOverlay = document.querySelector(".nav-overlay");
   const navOverlayLinks = document.querySelectorAll(".nav-overlay .nav-link");
-  const hoverImageContainer = document.querySelector(".nav-hover-image");
 
   if (menuToggle && navOverlay) {
     menuToggle.addEventListener("click", () => {
       navOverlay.classList.toggle("is-active");
       document.body.classList.toggle("no-scroll");
+
+      // Zorg ervoor dat de header-achtergrond zichtbaar is als het menu open is, zelfs bovenaan de pagina
+      if (navOverlay.classList.contains("is-active")) {
+        headerBg.classList.add("is-visible");
+      } else if (window.scrollY <= 50) {
+        headerBg.classList.remove("is-visible");
+      }
     });
 
     navOverlayLinks.forEach((link) => {
       link.addEventListener("click", () => {
         navOverlay.classList.remove("is-active");
         document.body.classList.remove("no-scroll");
-      });
-    });
-  }
-
-  // --- 3. INTERACTIVE HOVER IMAGE LOGIC ---
-  if (hoverImageContainer && navOverlayLinks) {
-    navOverlayLinks.forEach((link) => {
-      link.addEventListener("mouseenter", () => {
-        const imageUrl = link.getAttribute("data-img");
-        if (imageUrl) {
-          hoverImageContainer.style.backgroundImage = `url(${imageUrl})`;
-          hoverImageContainer.style.opacity = "1";
-          hoverImageContainer.style.transform = "scale(1) rotate(-3deg)";
+        if (window.scrollY <= 50) {
+          headerBg.classList.remove("is-visible");
         }
       });
-
-      link.addEventListener("mouseleave", () => {
-        hoverImageContainer.style.opacity = "0";
-        hoverImageContainer.style.transform = "scale(0.8) rotate(0deg)";
-      });
-    });
-
-    window.addEventListener("mousemove", (e) => {
-      if (window.innerWidth > 768) {
-        hoverImageContainer.style.left = `${e.clientX + 20}px`;
-        hoverImageContainer.style.top = `${e.clientY - 200}px`;
-      }
     });
   }
 
-  // --- 4. SWIPERJS SLIDER FOR REVIEWS ---
+  // --- 3. SWIPERJS SLIDER FOR REVIEWS ---
   if (typeof Swiper !== "undefined" && document.querySelector(".swiper")) {
     const swiper = new Swiper(".swiper", {
       loop: true,
@@ -80,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 5. ANIMATE ON SCROLL (INTERSECTION OBSERVER) ---
+  // --- 4. ANIMATE ON SCROLL (INTERSECTION OBSERVER) ---
   const scrollElements = document.querySelectorAll(".animate-on-scroll");
   if (scrollElements.length > 0) {
     const observer = new IntersectionObserver(
