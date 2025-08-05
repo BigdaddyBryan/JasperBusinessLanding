@@ -99,6 +99,7 @@
 
     <main>
       <section id="hero">
+        <div class="hero-spotlight"></div>
         <div class="video-background">
           <video playsinline autoplay muted loop>
             <source
@@ -108,20 +109,26 @@
           </video>
         </div>
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <h1 class="hero-title animate-on-load">
-            BLIJF STAAN. HOE DE WERELD OOK VERANDERT.
-          </h1>
-          <p class="animate-on-load" data-delay="2">
-            Weerbaarheidstrainingen door actieve militairen. Bewezen praktijk
-            voor iedereen die mentaal en fysiek onbreekbaar wil worden.
-          </p>
-          <a
-            href="#contact"
-            class="btn btn-primary animate-on-load"
-            data-delay="4"
-            >START DE MISSIE</a
-          >
+
+        <div class="hero-content-container">
+          <div class="hero-content">
+            <h1 class="hero-title"></h1>
+            <p class="hero-subtitle">
+              Weerbaarheidstrainingen door actieve militairen. Bewezen praktijk
+              voor iedereen die mentaal en fysiek onbreekbaar wil worden.
+            </p>
+
+            <a href="#contact" class="btn btn-primary hero-btn">
+              <span class="btn-text-main">Start de Missie</span>
+              <span class="btn-text-icon"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <i class="fas fa-chevron-down"></i>
         </div>
       </section>
 
@@ -160,7 +167,6 @@
           </div>
         </div>
       </section>
-
       <section id="programma">
         <div class="program-backgrounds">
           <img
@@ -195,7 +201,6 @@
           />
         </div>
         <div class="program-overlay"></div>
-
         <div class="container program-container">
           <div class="program-selector animate-on-scroll">
             <h2 class="program-main-title">ONS PROGRAMMA</h2>
@@ -237,7 +242,6 @@
               </li>
             </ul>
           </div>
-
           <div class="program-content animate-on-scroll" data-delay="2">
             <div class="content-panel active" data-pillar="mental">
               <h3>Verleg je mentale grenzen.</h3>
@@ -348,7 +352,6 @@
           </div>
         </div>
       </section>
-
       <section id="contact">
         <div class="container">
           <div class="contact-grid">

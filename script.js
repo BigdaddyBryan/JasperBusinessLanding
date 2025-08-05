@@ -14,15 +14,55 @@ window.addEventListener("load", () => {
 
 // De rest van het script wordt uitgevoerd nadat de basis HTML is geladen
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. HEADER LOGIC ---
+  // --- HERO SECTIE LOGICA ---
+  const heroSection = document.querySelector("#hero");
+  if (heroSection) {
+    const spotlight = heroSection.querySelector(".hero-spotlight");
+    const heroContent = heroSection.querySelector(".hero-content-container");
+    const heroTitle = heroSection.querySelector(".hero-title");
+
+    // 1. Gespreide Tekstanimatie voor de titel
+    const titleText = "Blijf Staan. Hoe de Wereld ook Verandert.";
+    titleText.split("").forEach((char, index) => {
+      const span = document.createElement("span");
+      span.className = "char";
+      span.textContent = char;
+      span.style.transitionDelay = `${index * 20}ms`;
+      heroTitle.appendChild(span);
+    });
+
+    // 2. Muisinteractie voor spotlight en 3D tilt
+    heroSection.addEventListener("mousemove", (e) => {
+      if (window.innerWidth > 1024) {
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = heroSection;
+
+        spotlight.style.left = `${clientX}px`;
+        spotlight.style.top = `${clientY}px`;
+
+        const x = (clientX / offsetWidth - 0.5) * 2;
+        const y = (clientY / offsetHeight - 0.5) * -2;
+        const rotateY = x * 8;
+        const rotateX = y * 4;
+
+        heroContent.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+      }
+    });
+
+    heroSection.addEventListener("mouseleave", () => {
+      heroContent.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    });
+  }
+
+  // --- HEADER LOGICA ---
   const headerBg = document.querySelector(".header-background");
   let lastScrollY = window.scrollY;
   if (headerBg) {
     window.addEventListener("scroll", () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
         headerBg.classList.remove("is-visible");
-      } else if (currentScrollY < lastScrollY && currentScrollY > 50) {
+      } else if (currentScrollY < lastScrollY) {
         headerBg.classList.add("is-visible");
       } else if (currentScrollY <= 50) {
         headerBg.classList.remove("is-visible");
@@ -31,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 2. NAVIGATIE OVERLAY LOGIC ---
+  // --- NAVIGATIE OVERLAY LOGICA ---
   const menuToggle = document.querySelector(".header-menu-toggle");
   const navOverlay = document.querySelector(".nav-overlay");
   const navOverlayLinks = document.querySelectorAll(".nav-overlay .nav-link");
@@ -56,35 +96,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 3. INTERACTIEVE PROGRAMMA SECTIE LOGIC ---
+  // --- INTERACTIEVE PROGRAMMA SECTIE LOGICA ---
   const pillarItems = document.querySelectorAll(".pillar-item");
   if (pillarItems.length > 0) {
     pillarItems.forEach((item) => {
       item.addEventListener("click", () => {
-        // Haal de 'data-pillar' waarde op van het geklikte item
         const activePillar = item.dataset.pillar;
-
-        // Update de active state op de selector lijst
         pillarItems.forEach((p) => p.classList.remove("active"));
         item.classList.add("active");
-
-        // Update de achtergrondafbeelding
-        document.querySelectorAll(".program-bg").forEach((bg) => {
-          bg.classList.toggle("active", bg.dataset.pillar === activePillar);
-        });
-
-        // Update het content paneel
-        document.querySelectorAll(".content-panel").forEach((panel) => {
-          panel.classList.toggle(
-            "active",
-            panel.dataset.pillar === activePillar
+        document
+          .querySelectorAll(".program-bg")
+          .forEach((bg) =>
+            bg.classList.toggle("active", bg.dataset.pillar === activePillar)
           );
-        });
+        document
+          .querySelectorAll(".content-panel")
+          .forEach((panel) =>
+            panel.classList.toggle(
+              "active",
+              panel.dataset.pillar === activePillar
+            )
+          );
       });
     });
   }
 
-  // --- 4. SWIPERJS SLIDER FOR REVIEWS ---
+  // --- SWIPERJS SLIDER FOR REVIEWS ---
   if (typeof Swiper !== "undefined" && document.querySelector(".swiper")) {
     const swiper = new Swiper(".swiper", {
       loop: true,
@@ -93,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 5. ANIMATE ON SCROLL (INTERSECTION OBSERVER) ---
+  // --- ANIMATE ON SCROLL (INTERSECTION OBSERVER) ---
   const scrollElements = document.querySelectorAll(".animate-on-scroll");
   if (scrollElements.length > 0) {
     const observer = new IntersectionObserver(
@@ -108,12 +145,12 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
     scrollElements.forEach((el) => observer.observe(el));
   }
 
-  // --- 6. INTERACTIEVE CONTACT FORMULIER LOGIC ---
+  // --- INTERACTIEVE CONTACT FORMULIER LOGIC ---
   const contactForm = document.querySelector("#contact-form");
   if (contactForm) {
     const submitBtn = contactForm.querySelector(".btn-submit");
