@@ -14,11 +14,10 @@ window.addEventListener("load", () => {
 
 // De rest van het script wordt uitgevoerd nadat de basis HTML is geladen
 document.addEventListener("DOMContentLoaded", () => {
-  // --- HERO SECTIE LOGICA ---
+  // --- HERO SECTIE "REVEAL" LOGICA ---
   const heroSection = document.querySelector("#hero");
   if (heroSection) {
-    const spotlight = heroSection.querySelector(".hero-spotlight");
-    const heroContent = heroSection.querySelector(".hero-content-container");
+    const videoReveal = heroSection.querySelector(".hero-video-reveal");
     const heroTitle = heroSection.querySelector(".hero-title");
 
     // 1. Gespreide Tekstanimatie voor de titel
@@ -31,26 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
       heroTitle.appendChild(span);
     });
 
-    // 2. Muisinteractie voor spotlight en 3D tilt
+    // 2. Muisinteractie voor het 'clip-path' onthullingseffect
     heroSection.addEventListener("mousemove", (e) => {
       if (window.innerWidth > 1024) {
-        const { clientX, clientY } = e;
-        const { offsetWidth, offsetHeight } = heroSection;
-
-        spotlight.style.left = `${clientX}px`;
-        spotlight.style.top = `${clientY}px`;
-
-        const x = (clientX / offsetWidth - 0.5) * 2;
-        const y = (clientY / offsetHeight - 0.5) * -2;
-        const rotateY = x * 8;
-        const rotateX = y * 4;
-
-        heroContent.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+        // Alleen op grotere schermen
+        // Gebruik CSS custom properties voor betere performance
+        heroSection.style.setProperty("--mouse-x", e.clientX + "px");
+        heroSection.style.setProperty("--mouse-y", e.clientY + "px");
       }
-    });
-
-    heroSection.addEventListener("mouseleave", () => {
-      heroContent.style.transform = `rotateY(0deg) rotateX(0deg)`;
     });
   }
 

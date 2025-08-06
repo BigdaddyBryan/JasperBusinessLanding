@@ -268,7 +268,6 @@ p {
     line-height: 1.7;
 }
 
-/* =========== KNOP STYLING (AANGEPAST) =========== */
 .btn {
     display: inline-block;
     font-family: var(--font-heading);
@@ -280,7 +279,6 @@ p {
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
     overflow: hidden;
-    /* Belangrijk voor de animatie */
 }
 
 .btn-primary {
@@ -291,10 +289,8 @@ p {
 
 .hero-btn {
     padding: 1.2rem 3rem;
-    /* Iets groter voor meer impact */
 }
 
-/* De twee tekst/icoon-elementen in de knop */
 .btn-text-main,
 .btn-text-icon {
     display: inline-block;
@@ -306,12 +302,10 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(100px, -50%);
-    /* Start buiten beeld (rechts) */
     opacity: 0;
     font-size: 1.2rem;
 }
 
-/* De hover-animatie */
 .btn:hover {
     background-color: transparent;
     color: var(--color-primary);
@@ -319,58 +313,55 @@ p {
 
 .btn:hover .btn-text-main {
     transform: translateX(-150%);
-    /* Schuif tekst naar links */
     opacity: 0;
 }
 
 .btn:hover .btn-text-icon {
     transform: translate(-50%, -50%);
-    /* Breng icoon naar het midden */
     opacity: 1;
 }
 
-/* De actieve/klik-staat */
 .btn:active {
     transform: scale(0.97);
 }
 
-/* ======================================================= */
-
-
-/* =========== HERO SECTIE STYLES (AANGEPAST) =========== */
+/* =========== HERO SECTIE "REVEAL" STYLES =========== */
 #hero {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     padding: 0;
-    perspective: 1000px;
 }
 
-.hero-spotlight {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 60%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: -1;
-    mix-blend-mode: soft-light;
-}
-
-.video-background {
+.hero-static-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -3;
+    /* Gebruik een hoge kwaliteit screenshot van de video */
+    background: url('https://i.imgur.com/kSj9s2M.jpg') center center/cover;
 }
 
-.video-background video {
+.hero-video-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    /* Het magische 'knipmasker' dat de muis volgt */
+    clip-path: circle(0px at 50% 50%);
+    transition: clip-path 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#hero:hover .hero-video-reveal {
+    clip-path: circle(250px at var(--mouse-x, 50%) var(--mouse-y, 50%));
+}
+
+.hero-video-reveal video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -382,12 +373,11 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(18, 18, 18, 0.3) 0%, rgba(18, 18, 18, 0.8) 100%);
-    z-index: -2;
+    background: rgba(18, 18, 18, 0.6);
+    z-index: -1;
 }
 
 .hero-content-container {
-    transform-style: preserve-3d;
     transition: transform 0.1s linear;
 }
 
@@ -403,6 +393,7 @@ p {
     line-height: 1.1;
     margin-bottom: 2rem;
     font-weight: 700;
+    color: var(--color-light);
 }
 
 .hero-title .char {
@@ -423,7 +414,6 @@ body.loading-complete .hero-title .char {
     transform: translateY(30px);
 }
 
-/* Verwijder .animate-on-load, wordt nu door JS getriggerd */
 body.loading-complete .hero-subtitle {
     opacity: 1;
     transform: translateY(0);
@@ -436,11 +426,11 @@ body.loading-complete .hero-btn {
     transition: opacity 1s ease 1s, transform 1s ease 1s;
 }
 
-/* Iets meer delay voor de knop */
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto 2.5rem auto;
+    color: var(--color-light);
 }
 
 .scroll-indicator {
@@ -451,6 +441,7 @@ body.loading-complete .hero-btn {
     opacity: 0;
     animation: bounce 2s infinite ease-in-out;
     transition: opacity 1s ease 1.5s;
+    transform: translateX(-50%);
 }
 
 body.loading-complete .scroll-indicator {
@@ -477,6 +468,7 @@ body.loading-complete .scroll-indicator {
 }
 
 /* ---- ANDERE SECTIES ---- */
+/* ... (De rest van de CSS blijft ongewijzigd) ... */
 #over-ons {
     background-color: var(--color-dark);
 }
