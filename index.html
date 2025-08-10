@@ -2,9 +2,37 @@
 <html lang="nl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Missie Weerbaarheid | Eindresultaat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Missie Weerbaarheid | Weerbaarheidstraining door actieve militairen
+    </title>
+    <meta
+      name="description"
+      content="Weerbaarheidstrainingen door actieve militairen. Mentale, emotionele en fysieke weerbaarheid voor individuen en teams. Start je transformatie vandaag."
+    />
+    <link rel="canonical" href="https://www.missieweerbaarheid.nl/" />
 
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Missie Weerbaarheid" />
+    <meta
+      property="og:description"
+      content="Weerbaarheidstrainingen door actieve militairen. Word mentaal en fysiek onbreekbaar."
+    />
+    <meta property="og:url" content="https://www.missieweerbaarheid.nl/" />
+    <meta
+      property="og:image"
+      content="https://www.missieweerbaarheid.nl/og-cover.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,27 +40,49 @@
       rel="stylesheet"
     />
 
+    <!-- Icons & Swiper CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-8+6Yz4m..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style.css" />
 
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Missie Weerbaarheid",
+        "url": "https://www.missieweerbaarheid.nl/",
+        "logo": "https://www.missieweerbaarheid.nl/icon.svg",
+        "sameAs": [
+          "https://www.instagram.com/missieweerbaarheid",
+          "https://www.linkedin.com/company/missieweerbaarheid"
+        ]
+      }
+    </script>
+
+    <!-- Scripts (defer) -->
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
       defer
     ></script>
-    <script src="script.js" defer></script>
+    <script src="/script.js" defer></script>
   </head>
   <body>
-    <div id="preloader">
-      <div class="preloader-logo">
+    <a class="skip-link" href="#main">Direct naar de inhoud</a>
+
+    <div id="preloader" aria-hidden="true">
+      <div class="preloader-logo" aria-hidden="true">
         <svg
           width="80"
           height="80"
@@ -52,8 +102,8 @@
       </div>
     </div>
 
-    <header class="main-header">
-      <div class="header-background"></div>
+    <header class="main-header" role="banner">
+      <div class="header-background" aria-hidden="true"></div>
       <a href="#hero" class="header-logo" aria-label="Home">
         <svg
           width="45"
@@ -61,6 +111,7 @@
           viewBox="0 0 100 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <path
             d="M50 0L100 25V75L50 100L0 75V25L50 0Z"
@@ -72,15 +123,17 @@
           />
         </svg>
       </a>
-      <button class="header-menu-toggle" aria-label="Open menu">
-        <span class="icon">
-          <span></span>
-          <span></span>
-        </span>
+      <button
+        class="header-menu-toggle"
+        aria-label="Menu openen"
+        aria-controls="site-nav"
+        aria-expanded="false"
+      >
+        <span class="icon" aria-hidden="true"><span></span><span></span></span>
       </button>
     </header>
 
-    <div class="nav-overlay">
+    <nav id="site-nav" class="nav-overlay" aria-hidden="true">
       <div class="nav-links-container">
         <a href="#over-ons" class="nav-link"
           ><span><span class="num">01</span> Over Ons</span></a
@@ -95,14 +148,22 @@
           ><span><span class="num">04</span> Contact</span></a
         >
       </div>
-    </div>
+    </nav>
 
-    <main>
-      <section id="hero">
-        <div class="hero-static-background"></div>
+    <main id="main">
+      <!-- HERO -->
+      <section id="hero" aria-label="Intro">
+        <div class="hero-static-background" aria-hidden="true"></div>
 
-        <div class="hero-video-reveal">
-          <video playsinline autoplay muted loop>
+        <div class="hero-video-reveal" aria-hidden="true">
+          <video
+            playsinline
+            autoplay
+            muted
+            loop
+            preload="metadata"
+            poster="https://i.imgur.com/kSj9s2M.jpg"
+          >
             <source
               src="https://assets.mixkit.co/videos/preview/mixkit-man-running-on-a-road-in-the-middle-of-a-forest-42823-large.mp4"
               type="video/mp4"
@@ -110,33 +171,65 @@
           </video>
         </div>
 
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
 
         <div class="hero-content-container">
           <div class="hero-content">
-            <h1 class="hero-title"></h1>
-            <p class="hero-subtitle">
-              Weerbaarheidstrainingen door actieve militairen. Bewezen praktijk
-              voor iedereen die mentaal en fysiek onbreekbaar wil worden.
+            <p class="hero-kicker">
+              Weerbaarheidstraining door actieve militairen
             </p>
-            <a href="#contact" class="btn btn-primary hero-btn">
-              <span class="btn-text-main">Start de Missie</span>
-              <span class="btn-text-icon"
-                ><i class="fas fa-arrow-right"></i
-              ></span>
-            </a>
+
+            <!-- Belangrijk: data-no-split voorkomt het oude letter-split script -->
+            <h1 class="hero-title" data-no-split="true">
+              <span class="title-line"
+                >Blijf <span class="accent">staan</span>.</span
+              >
+              <span class="title-line"
+                >Wat er ook
+                <span class="rotate-wrap"
+                  ><span id="hero-rotate" aria-live="polite"
+                    >verandert</span
+                  ></span
+                >.</span
+              >
+            </h1>
+
+            <p class="hero-subtitle">
+              Smeed mentale scherpte, emotionele rust en functionele kracht met
+              methodes die in het veld zijn beproefd.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#contact" class="btn btn-primary hero-btn">
+                <span class="btn-text-main">Start de missie</span>
+                <span class="btn-text-icon"
+                  ><i class="fas fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </a>
+              <a href="#programma" class="btn btn-ghost hero-btn-secondary"
+                >Bekijk het programma</a
+              >
+            </div>
+
+            <ul class="hero-highlights" aria-label="Kernpunten">
+              <li>Resultaat in 6–8 weken</li>
+              <li>Teams & individuen</li>
+              <li>Bewezen protocollen</li>
+            </ul>
           </div>
         </div>
 
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" aria-hidden="true">
           <i class="fas fa-chevron-down"></i>
         </div>
       </section>
-      <section id="over-ons">
+
+      <!-- OVER ONS -->
+      <section id="over-ons" aria-labelledby="about-heading">
         <div class="container">
           <div class="about-grid">
             <div class="about-text-content animate-on-scroll">
-              <h2>GEBOUWD OP ERVARING</h2>
+              <h2 id="about-heading">GEBOUWD OP ERVARING</h2>
               <h3>Onze missie is simpel: de beste versie van jezelf smeden.</h3>
               <p>
                 Wij geloven niet in shortcuts. We geloven in discipline,
@@ -147,95 +240,145 @@
               <h4>WIJ TRAINEN WAT WE ZELF LEVEN.</h4>
             </div>
             <div class="about-image-wrapper animate-on-scroll" data-delay="2">
-              <img src="https://i.imgur.com/r0aLht3.png" alt="Trainer" />
+              <picture>
+                <source
+                  srcset="https://i.imgur.com/r0aLht3.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="https://i.imgur.com/r0aLht3.png"
+                  alt="Trainer in actie"
+                  loading="lazy"
+                  decoding="async"
+                  width="960"
+                  height="640"
+                />
+              </picture>
             </div>
           </div>
+
           <div class="trainers-grid">
-            <div class="trainer-profile animate-on-scroll">
-              <img src="https://i.imgur.com/r0aLht3.png" alt="Robert Rutjes" />
+            <article class="trainer-profile animate-on-scroll">
+              <picture>
+                <source
+                  srcset="https://i.imgur.com/r0aLht3.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="https://i.imgur.com/r0aLht3.png"
+                  alt="Trainer Robert Rutjes"
+                  loading="lazy"
+                  decoding="async"
+                  width="300"
+                  height="300"
+                />
+              </picture>
               <h5>Robert Rutjes</h5>
               <p>Expert in mentale veerkracht en fysieke paraatheid.</p>
-            </div>
-            <div class="trainer-profile animate-on-scroll" data-delay="2">
-              <img
-                src="https://i.imgur.com/kSj9s2M.jpg"
-                alt="Jasper van Rooijen"
-              />
+            </article>
+            <article class="trainer-profile animate-on-scroll" data-delay="2">
+              <picture>
+                <source
+                  srcset="https://i.imgur.com/kSj9s2M.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="https://i.imgur.com/kSj9s2M.jpg"
+                  alt="Trainer Jasper van Rooijen"
+                  loading="lazy"
+                  decoding="async"
+                  width="300"
+                  height="300"
+                />
+              </picture>
               <h5>Jasper van Rooijen</h5>
               <p>Specialist in stressmanagement en teamprestaties.</p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="programma">
-        <div class="program-backgrounds">
+      <!-- PROGRAMMA -->
+      <section id="programma" aria-labelledby="program-heading">
+        <div class="program-backgrounds" aria-hidden="true">
           <img
             src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
             alt="Mentale Weerbaarheid"
             class="program-bg active"
             data-pillar="mental"
+            width="2070"
+            height="1380"
           />
           <img
             src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?q=80&w=2070&auto=format&fit=crop"
             alt="Emotionele Stabiliteit"
             class="program-bg"
             data-pillar="emotional"
+            width="2070"
+            height="1380"
           />
           <img
             src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop"
             alt="Fysieke Kracht"
             class="program-bg"
             data-pillar="physical"
+            width="2069"
+            height="1380"
           />
           <img
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
             alt="Sociale Dynamiek"
             class="program-bg"
             data-pillar="social"
+            width="2071"
+            height="1380"
           />
           <img
             src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1974&auto=format&fit=crop"
             alt="Praktische Paraatheid"
             class="program-bg"
             data-pillar="practical"
+            width="1974"
+            height="1380"
           />
         </div>
-        <div class="program-overlay"></div>
+        <div class="program-overlay" aria-hidden="true"></div>
         <div class="container program-container">
           <div class="program-selector animate-on-scroll">
-            <h2 class="program-main-title">ONS PROGRAMMA</h2>
+            <h2 id="program-heading" class="program-main-title">
+              ONS PROGRAMMA
+            </h2>
             <ul>
               <li class="pillar-item active" data-pillar="mental">
-                <i class="fas fa-brain"></i>
+                <i class="fas fa-brain" aria-hidden="true"></i>
                 <div class="pillar-text">
                   <h5>01. Mentale Weerbaarheid</h5>
                   <p>Smeed een onbreekbare focus en discipline.</p>
                 </div>
               </li>
               <li class="pillar-item" data-pillar="emotional">
-                <i class="fas fa-heart-pulse"></i>
+                <i class="fas fa-heart-pulse" aria-hidden="true"></i>
                 <div class="pillar-text">
                   <h5>02. Emotionele Stabiliteit</h5>
                   <p>Vind kalmte en controle in elke storm.</p>
                 </div>
               </li>
               <li class="pillar-item" data-pillar="physical">
-                <i class="fas fa-dumbbell"></i>
+                <i class="fas fa-dumbbell" aria-hidden="true"></i>
                 <div class="pillar-text">
                   <h5>03. Fysieke Kracht</h5>
                   <p>Bouw een functioneel en veerkrachtig lichaam.</p>
                 </div>
               </li>
               <li class="pillar-item" data-pillar="social">
-                <i class="fas fa-users"></i>
+                <i class="fas fa-users" aria-hidden="true"></i>
                 <div class="pillar-text">
                   <h5>04. Sociale Dynamiek</h5>
                   <p>Versterk leiderschap en teamcohesie.</p>
                 </div>
               </li>
               <li class="pillar-item" data-pillar="practical">
-                <i class="fas fa-shield-halved"></i>
+                <i class="fas fa-shield-halved" aria-hidden="true"></i>
                 <div class="pillar-text">
                   <h5>05. Praktische Paraatheid</h5>
                   <p>Wees voorbereid op het onverwachte.</p>
@@ -323,43 +466,57 @@
         </div>
       </section>
 
-      <section id="reviews">
+      <!-- REVIEWS -->
+      <section id="reviews" aria-labelledby="reviews-heading">
         <div class="container">
-          <h2 class="animate-on-scroll">WAT ONZE DEELNEMERS ZEGGEN</h2>
-          <div class="swiper animate-on-scroll" data-delay="2">
+          <h2 id="reviews-heading" class="animate-on-scroll">
+            WAT ONZE DEELNEMERS ZEGGEN
+          </h2>
+          <div
+            class="swiper animate-on-scroll"
+            data-delay="2"
+            aria-label="Ervaringen van deelnemers"
+          >
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <p>
-                  "Een absolute game-changer. De directe aanpak heeft mijn
-                  perspectief volledig veranderd."
-                </p>
-                <span>- Mark T., Ondernemer</span>
+                <blockquote>
+                  <p>
+                    "Een absolute game-changer. De directe aanpak heeft mijn
+                    perspectief volledig veranderd."
+                  </p>
+                  <footer><cite>- Mark T., Ondernemer</cite></footer>
+                </blockquote>
               </div>
               <div class="swiper-slide">
-                <p>
-                  "Ik dacht dat ik fit was. Deze training heeft me laten zien
-                  wat echte kracht is."
-                </p>
-                <span>- Linda S., Manager</span>
+                <blockquote>
+                  <p>
+                    "Ik dacht dat ik fit was. Deze training heeft me laten zien
+                    wat echte kracht is."
+                  </p>
+                  <footer><cite>- Linda S., Manager</cite></footer>
+                </blockquote>
               </div>
               <div class="swiper-slide">
-                <p>
-                  "De beste teambuilding die we ooit hebben gehad. Ons team is
-                  hechter en effectiever."
-                </p>
-                <span>- CEO, Tech Bedrijf</span>
+                <blockquote>
+                  <p>
+                    "De beste teambuilding die we ooit hebben gehad. Ons team is
+                    hechter en effectiever."
+                  </p>
+                  <footer><cite>- CEO, Tech Bedrijf</cite></footer>
+                </blockquote>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination" aria-hidden="true"></div>
           </div>
         </div>
       </section>
 
-      <section id="contact">
+      <!-- CONTACT -->
+      <section id="contact" aria-labelledby="contact-heading">
         <div class="container">
           <div class="contact-grid">
             <div class="contact-info animate-on-scroll">
-              <h2>KLAAR VOOR DE<br />UITDAGING?</h2>
+              <h2 id="contact-heading">KLAAR VOOR DE<br />UITDAGING?</h2>
               <p>
                 Uw transformatie begint hier. Een bericht is de eerste stap. Wij
                 nemen persoonlijk contact op voor een vrijblijvend gesprek.
@@ -371,17 +528,31 @@
                 >
                 <a href="tel:+31612345678">+31 6 1234 5678</a>
               </div>
-              <div class="contact-socials">
+              <div class="contact-socials" aria-label="Social media">
                 <a href="#" aria-label="LinkedIn"
-                  ><i class="fab fa-linkedin"></i
+                  ><i class="fab fa-linkedin" aria-hidden="true"></i
                 ></a>
                 <a href="#" aria-label="Instagram"
-                  ><i class="fab fa-instagram"></i
+                  ><i class="fab fa-instagram" aria-hidden="true"></i
                 ></a>
               </div>
             </div>
+
             <div class="contact-form-wrapper animate-on-scroll" data-delay="2">
-              <form id="contact-form">
+              <!-- Netlify fallback -->
+              <form
+                id="contact-form"
+                name="Contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+              >
+                <input type="hidden" name="form-name" value="Contact" />
+                <p class="hidden" aria-hidden="true">
+                  <label>Laat dit leeg: <input name="bot-field" /></label>
+                </p>
+
                 <div class="form-group">
                   <input
                     type="text"
@@ -389,9 +560,12 @@
                     name="name"
                     required
                     placeholder=" "
-                  /><label for="name">Uw Naam</label
+                    autocomplete="name"
+                  />
+                  <label for="name">Uw Naam</label
                   ><span class="focus-border"></span>
                 </div>
+
                 <div class="form-group">
                   <input
                     type="email"
@@ -399,9 +573,12 @@
                     name="email"
                     required
                     placeholder=" "
-                  /><label for="email">Uw E-mailadres</label
+                    autocomplete="email"
+                  />
+                  <label for="email">Uw E-mailadres</label
                   ><span class="focus-border"></span>
                 </div>
+
                 <div class="form-group">
                   <textarea
                     id="message"
@@ -409,21 +586,35 @@
                     rows="5"
                     required
                     placeholder=" "
-                  ></textarea
-                  ><label for="message">Uw Bericht</label
+                    minlength="10"
+                  ></textarea>
+                  <label for="message">Uw Bericht</label
                   ><span class="focus-border"></span>
                 </div>
+
                 <button type="submit" class="btn btn-submit">
                   <span class="btn-text">Verstuur</span
-                  ><span class="btn-loader"></span>
+                  ><span class="btn-loader" aria-hidden="true"></span>
                 </button>
               </form>
-              <div class="success-message">
-                <i class="fas fa-check-circle"></i>
+
+              <div class="success-message" role="status" aria-live="polite">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
                 <h3>Bericht ontvangen!</h3>
                 <p>
                   Bedankt voor uw interesse. We nemen zo snel mogelijk contact
                   met u op.
+                </p>
+              </div>
+
+              <div class="error-message" role="alert" aria-live="assertive">
+                <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
+                <h3>Er ging iets mis</h3>
+                <p>
+                  Probeer het later opnieuw of mail naar
+                  <a href="mailto:intake@missieweerbaarheid.nl"
+                    >intake@missieweerbaarheid.nl</a
+                  >.
                 </p>
               </div>
             </div>
@@ -432,8 +623,10 @@
       </section>
     </main>
 
-    <footer class="main-footer">
-      <p>&copy; 2025 Missie Weerbaarheid. Gesmeed voor de top.</p>
+    <footer class="main-footer" role="contentinfo">
+      <p>
+        &copy; <span id="year"></span> Missie Weerbaarheid. Gesmeed voor de top.
+      </p>
     </footer>
   </body>
 </html>
