@@ -84,30 +84,41 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // NAV OVERLAY
-  const menuToggle = $(".header-menu-toggle");
-  const navOverlay = $("#site-nav");
-  const navLinks = $$(".nav-overlay .nav-link");
+  const toggle = document.getElementById('nav-toggle');
+  const overlay = document.getElementById('nav-overlay');
+  const main = document.querySelector('main');
+  let lastFocus = null;
 
-  function setNav(open) {
-    if (!navOverlay || !menuToggle) return;
-    navOverlay.classList.toggle("is-active", open);
-    document.body.classList.toggle("no-scroll", open);
-    navOverlay.setAttribute("aria-hidden", String(!open));
-    menuToggle.setAttribute("aria-expanded", String(open));
-    if (open) headerBg && headerBg.classList.add("is-visible");
-    else if (window.scrollY <= 50)
-      headerBg && headerBg.classList.remove("is-visible");
+  const focusSelectors = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+  function trap(e){
+    if (e.key !== 'Tab') return;
+    const nodes = [...overlay.querySelectorAll(focusSelectors)].filter(el=>!el.hasAttribute('disabled'));
+    if (!nodes.length) return;
+    const first = nodes[0], last = nodes[nodes.length-1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
   }
-
-  if (menuToggle && navOverlay) {
-    menuToggle.addEventListener("click", () =>
-      setNav(!navOverlay.classList.contains("is-active"))
-    );
-    navLinks.forEach((a) => a.addEventListener("click", () => setNav(false)));
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setNav(false);
-    });
+  function openNav(){
+    lastFocus = document.activeElement;
+    toggle.setAttribute('aria-expanded','true');
+    overlay.hidden = false;
+    document.body.classList.add('nav-open');
+    main?.setAttribute('inert','');
+    overlay.addEventListener('keydown', trap);
+    (overlay.querySelector('[data-autofocus]') || overlay.querySelector(focusSelectors))?.focus();
   }
+  function closeNav(){
+    toggle.setAttribute('aria-expanded','false');
+    overlay.hidden = true;
+    document.body.classList.remove('nav-open');
+    main?.removeAttribute('inert');
+    overlay.removeEventListener('keydown', trap);
+    lastFocus?.focus();
+  }
+  toggle?.addEventListener('click', () => (overlay.hidden ? openNav() : closeNav()));
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && !overlay.hidden) closeNav(); });
+  overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeNav(); });
+  overlay.querySelectorAll('[data-navlink]').forEach(a=>a.addEventListener('click', closeNav));
 
   // PROGRAMMA tabs
   const pillarItems = $$(".pillar-item");
@@ -156,67 +167,16 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollEls.forEach((el) => io.observe(el));
   }
 
-  // CONTACT FORM (Formspree via Fetch, Netlify fallback through native POST)
-  const form = $("#contact-form");
-  if (form) {
-    const submitBtn = form.querySelector(".btn-submit");
-    const successEl = $(".success-message");
-    const errorEl = $(".error-message");
-
-    async function sendForm(e) {
+  // CONTACT FORM
+  const contactForm = document.getElementById('contact');
+  if (contactForm){
+    contactForm.addEventListener('submit', async (e)=>{
       e.preventDefault();
-      if (!submitBtn) return;
-      submitBtn.classList.add("loading");
-      errorEl && errorEl.classList.remove("is-visible");
-
-      // Prepare payload
-      const data = new FormData(form);
-      const endpoint = form.getAttribute("action"); // Formspree endpoint
-
-      try {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
-        });
-        if (res.ok) {
-          submitBtn.classList.remove("loading");
-          submitBtn.classList.add("success");
-          submitBtn.querySelector(".btn-text").innerHTML =
-            '<i class="fas fa-check" aria-hidden="true"></i>';
-          setTimeout(() => {
-            form.style.opacity = "0";
-            successEl && successEl.classList.add("is-visible");
-          }, 400);
-          form.reset();
-        } else {
-          throw new Error("Formspree error");
-        }
-      } catch (err) {
-        // Fallback: try native POST (useful if hosted on Netlify)
-        try {
-          const res2 = await fetch(form.action, {
-            method: form.method || "POST",
-            body: data,
-          });
-          if (!res2.ok) throw new Error("Fallback POST failed");
-          submitBtn.classList.remove("loading");
-          submitBtn.classList.add("success");
-          submitBtn.querySelector(".btn-text").innerHTML =
-            '<i class="fas fa-check" aria-hidden="true"></i>';
-          setTimeout(() => {
-            form.style.opacity = "0";
-            successEl && successEl.classList.add("is-visible");
-          }, 400);
-          form.reset();
-        } catch (fallbackErr) {
-          submitBtn.classList.remove("loading");
-          errorEl && errorEl.classList.add("is-visible");
-        }
-      }
-    }
-
-    form.addEventListener("submit", sendForm);
+      const data = new FormData(contactForm);
+      const res = await fetch(contactForm.action, { method:'POST', body:data, headers:{ 'Accept':'application/json' }});
+      contactForm.reset();
+      document.getElementById('contact-success').hidden = false;
+    });
   }
 
   // Footer year

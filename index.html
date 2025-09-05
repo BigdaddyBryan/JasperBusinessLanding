@@ -123,31 +123,20 @@
           />
         </svg>
       </a>
-      <button
-        class="header-menu-toggle"
-        aria-label="Menu openen"
-        aria-controls="site-nav"
-        aria-expanded="false"
-      >
-        <span class="icon" aria-hidden="true"><span></span><span></span></span>
+      <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav-overlay" aria-label="Menu openen">
+        <span aria-hidden="true" class="bar bar-1"></span>
+        <span aria-hidden="true" class="bar bar-2"></span>
+        <span aria-hidden="true" class="bar bar-3"></span>
       </button>
     </header>
 
-    <nav id="site-nav" class="nav-overlay" aria-hidden="true">
-      <div class="nav-links-container">
-        <a href="#over-ons" class="nav-link"
-          ><span><span class="num">01</span> Over Ons</span></a
-        >
-        <a href="#programma" class="nav-link"
-          ><span><span class="num">02</span> Programma</span></a
-        >
-        <a href="#reviews" class="nav-link"
-          ><span><span class="num">03</span> Reviews</span></a
-        >
-        <a href="#contact" class="nav-link"
-          ><span><span class="num">04</span> Contact</span></a
-        >
-      </div>
+    <nav id="nav-overlay" class="nav-overlay" hidden role="dialog" aria-modal="true">
+      <ul>
+        <li><a href="#over-ons" data-navlink data-autofocus>Over ons</a></li>
+        <li><a href="#programma" data-navlink>Programma</a></li>
+        <li><a href="#reviews" data-navlink>Reviews</a></li>
+        <li><a href="#contact" data-navlink>Contact</a></li>
+      </ul>
     </nav>
 
     <main id="main">
@@ -539,84 +528,19 @@
             </div>
 
             <div class="contact-form-wrapper animate-on-scroll" data-delay="2">
-              <!-- Netlify fallback -->
-              <form
-                id="contact-form"
-                name="Contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-              >
-                <input type="hidden" name="form-name" value="Contact" />
-                <p class="hidden" aria-hidden="true">
-                  <label>Laat dit leeg: <input name="bot-field" /></label>
-                </p>
-
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder=" "
-                    autocomplete="name"
-                  />
-                  <label for="name">Uw Naam</label
-                  ><span class="focus-border"></span>
-                </div>
-
-                <div class="form-group">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder=" "
-                    autocomplete="email"
-                  />
-                  <label for="email">Uw E-mailadres</label
-                  ><span class="focus-border"></span>
-                </div>
-
-                <div class="form-group">
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                    placeholder=" "
-                    minlength="10"
-                  ></textarea>
-                  <label for="message">Uw Bericht</label
-                  ><span class="focus-border"></span>
-                </div>
-
-                <button type="submit" class="btn btn-submit">
-                  <span class="btn-text">Verstuur</span
-                  ><span class="btn-loader" aria-hidden="true"></span>
-                </button>
+              <form id="contact" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+                <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <label>Naam <input name="name" required></label>
+                <label>E-mail <input type="email" name="email" required></label>
+                <label>Bericht <textarea name="message" required></textarea></label>
+                <label class="consent">
+                  <input type="checkbox" name="consent" required>
+                  Ik ga akkoord dat mijn gegevens alleen worden gebruikt om op mijn aanvraag te reageren.
+                </label>
+                <button type="submit">Versturen</button>
+                <p class="form-note">Lees onze <a href="/privacy.html" target="_blank" rel="noopener noreferrer">privacyverklaring</a>.</p>
+                <p id="contact-success" hidden>Bedankt! We reageren zo snel mogelijk.</p>
               </form>
-
-              <div class="success-message" role="status" aria-live="polite">
-                <i class="fas fa-check-circle" aria-hidden="true"></i>
-                <h3>Bericht ontvangen!</h3>
-                <p>
-                  Bedankt voor uw interesse. We nemen zo snel mogelijk contact
-                  met u op.
-                </p>
-              </div>
-
-              <div class="error-message" role="alert" aria-live="assertive">
-                <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
-                <h3>Er ging iets mis</h3>
-                <p>
-                  Probeer het later opnieuw of mail naar
-                  <a href="mailto:intake@missieweerbaarheid.nl"
-                    >intake@missieweerbaarheid.nl</a
-                  >.
-                </p>
-              </div>
             </div>
           </div>
         </div>
