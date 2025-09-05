@@ -587,28 +587,76 @@
       </section>
 
       <!-- EBOOK LEAD MAGNET -->
-      <section id="ebook" class="lead-magnet">
-        <h2>5 Sleutels tot Weerbaarheid (gratis e-book)</h2>
-        <p>
-          Krijg praktische tools voor ademhaling, focus, koude-exposure,
-          verbinding en routine.
-        </p>
-        <form
-          id="ebook-form"
-          action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-          method="POST"
-        >
-          <label>E-mail <input type="email" name="email" required /></label>
-          <input type="hidden" name="list" value="ebook-weerbaarheid" />
-          <label class="consent">
-            <input type="checkbox" name="optin" required /> Ja, stuur mij het
-            e-book en af en toe updates.
-          </label>
-          <button type="submit">Download e-book</button>
-          <p id="ebook-success" hidden>
-            Check je inbox om de download te bevestigen.
-          </p>
-        </form>
+      <section id="ebook" aria-labelledby="ebook-heading">
+        <div class="container">
+          <div class="ebook-grid">
+            <div class="ebook-image-wrapper animate-on-scroll">
+              <picture>
+                <source
+                  srcset="
+                    https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=400&auto=format&fit=crop&w=400&h=600  400w,
+                    https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop&w=800&h=1200 800w
+                  "
+                  sizes="(max-width: 768px) 80vw, 400px"
+                  type="image/jpeg"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=400&auto=format&fit=crop"
+                  alt="E-book cover van '5 Sleutels tot Weerbaarheid'"
+                  loading="lazy"
+                  width="400"
+                  height="600"
+                />
+              </picture>
+            </div>
+            <div class="ebook-content animate-on-scroll" data-delay="2">
+              <h2 id="ebook-heading">
+                5 Sleutels tot Weerbaarheid (gratis e-book)
+              </h2>
+              <p>
+                Krijg direct toegang tot praktische tools voor ademhaling,
+                focus, koude-exposure, verbinding en het bouwen van een
+                ijzersterke routine.
+              </p>
+              <form
+                id="ebook-form"
+                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                method="POST"
+              >
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    id="ebook-email"
+                    placeholder="Jouw e-mailadres"
+                    required
+                  />
+                  <label for="ebook-email" class="sr-only">E-mailadres</label>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  <span class="btn-text-main">Download E-book</span>
+                  <span class="btn-text-icon"
+                    ><i class="fas fa-download" aria-hidden="true"></i
+                  ></span>
+                </button>
+                <div class="consent">
+                  <input
+                    type="checkbox"
+                    id="ebook-optin"
+                    name="optin"
+                    required
+                  />
+                  <label for="ebook-optin"
+                    >Ja, stuur mij het e-book en af en toe updates.</label
+                  >
+                </div>
+                <p id="ebook-success" hidden>
+                  Check je inbox om de download te bevestigen.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- CONTACT -->
