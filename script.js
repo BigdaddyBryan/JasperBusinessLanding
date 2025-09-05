@@ -179,6 +179,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // EBOOK FORM
+  const ebookForm = document.getElementById('ebook-form');
+  if (ebookForm){
+    ebookForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const data = new FormData(ebookForm);
+      const res = await fetch(ebookForm.action, { method:'POST', body:data, headers:{ 'Accept':'application/json' }});
+      ebookForm.reset();
+      document.getElementById('ebook-success').hidden = false;
+    });
+  }
+
   // Footer year
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();

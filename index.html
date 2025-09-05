@@ -35,6 +35,9 @@
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://i.imgur.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preload" as="image" href="https://i.imgur.com/kSj9s2M.jpg" imagesrcset="https://i.imgur.com/kSj9s2M.jpg 768w, https://i.imgur.com/kSj9s2M.jpg 1280w, https://i.imgur.com/kSj9s2M.jpg 1920w" imagesizes="100vw">
     <link
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
@@ -498,6 +501,21 @@
             <div class="swiper-pagination" aria-hidden="true"></div>
           </div>
         </div>
+      </section>
+
+      <!-- EBOOK LEAD MAGNET -->
+      <section id="ebook" class="lead-magnet">
+        <h2>5 Sleutels tot Weerbaarheid (gratis e-book)</h2>
+        <p>Krijg praktische tools voor ademhaling, focus, koude-exposure, verbinding en routine.</p>
+        <form id="ebook-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <label>E-mail <input type="email" name="email" required></label>
+          <input type="hidden" name="list" value="ebook-weerbaarheid">
+          <label class="consent">
+            <input type="checkbox" name="optin" required> Ja, stuur mij het e-book en af en toe updates.
+          </label>
+          <button type="submit">Download e-book</button>
+          <p id="ebook-success" hidden>Check je inbox om de download te bevestigen.</p>
+        </form>
       </section>
 
       <!-- CONTACT -->
