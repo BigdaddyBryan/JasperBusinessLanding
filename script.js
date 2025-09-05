@@ -84,41 +84,61 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // NAV OVERLAY
-  const toggle = document.getElementById('nav-toggle');
-  const overlay = document.getElementById('nav-overlay');
-  const main = document.querySelector('main');
+  const toggle = document.getElementById("nav-toggle");
+  const overlay = document.getElementById("nav-overlay");
+  const main = document.querySelector("main");
   let lastFocus = null;
 
-  const focusSelectors = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
-  function trap(e){
-    if (e.key !== 'Tab') return;
-    const nodes = [...overlay.querySelectorAll(focusSelectors)].filter(el=>!el.hasAttribute('disabled'));
+  const focusSelectors =
+    'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+  function trap(e) {
+    if (e.key !== "Tab") return;
+    const nodes = [...overlay.querySelectorAll(focusSelectors)].filter(
+      (el) => !el.hasAttribute("disabled")
+    );
     if (!nodes.length) return;
-    const first = nodes[0], last = nodes[nodes.length-1];
-    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    const first = nodes[0],
+      last = nodes[nodes.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
-  function openNav(){
+  function openNav() {
     lastFocus = document.activeElement;
-    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute("aria-expanded", "true");
     overlay.hidden = false;
-    document.body.classList.add('nav-open');
-    main?.setAttribute('inert','');
-    overlay.addEventListener('keydown', trap);
-    (overlay.querySelector('[data-autofocus]') || overlay.querySelector(focusSelectors))?.focus();
+    document.body.classList.add("nav-open");
+    main?.setAttribute("inert", "");
+    overlay.addEventListener("keydown", trap);
+    (
+      overlay.querySelector("[data-autofocus]") ||
+      overlay.querySelector(focusSelectors)
+    )?.focus();
   }
-  function closeNav(){
-    toggle.setAttribute('aria-expanded','false');
+  function closeNav() {
+    toggle.setAttribute("aria-expanded", "false");
     overlay.hidden = true;
-    document.body.classList.remove('nav-open');
-    main?.removeAttribute('inert');
-    overlay.removeEventListener('keydown', trap);
+    document.body.classList.remove("nav-open");
+    main?.removeAttribute("inert");
+    overlay.removeEventListener("keydown", trap);
     lastFocus?.focus();
   }
-  toggle?.addEventListener('click', () => (overlay.hidden ? openNav() : closeNav()));
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && !overlay.hidden) closeNav(); });
-  overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeNav(); });
-  overlay.querySelectorAll('[data-navlink]').forEach(a=>a.addEventListener('click', closeNav));
+  toggle?.addEventListener("click", () =>
+    overlay.hidden ? openNav() : closeNav()
+  );
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !overlay.hidden) closeNav();
+  });
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeNav();
+  });
+  overlay
+    .querySelectorAll("[data-navlink]")
+    .forEach((a) => a.addEventListener("click", closeNav));
 
   // PROGRAMMA tabs
   const pillarItems = $$(".pillar-item");
@@ -168,26 +188,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // CONTACT FORM
-  const contactForm = document.getElementById('contact');
-  if (contactForm){
-    contactForm.addEventListener('submit', async (e)=>{
+  const contactForm = document.getElementById("contact");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const data = new FormData(contactForm);
-      const res = await fetch(contactForm.action, { method:'POST', body:data, headers:{ 'Accept':'application/json' }});
+      const res = await fetch(contactForm.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
       contactForm.reset();
-      document.getElementById('contact-success').hidden = false;
+      document.getElementById("contact-success").hidden = false;
     });
   }
 
   // EBOOK FORM
-  const ebookForm = document.getElementById('ebook-form');
-  if (ebookForm){
-    ebookForm.addEventListener('submit', async (e)=>{
+  const ebookForm = document.getElementById("ebook-form");
+  if (ebookForm) {
+    ebookForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const data = new FormData(ebookForm);
-      const res = await fetch(ebookForm.action, { method:'POST', body:data, headers:{ 'Accept':'application/json' }});
+      const res = await fetch(ebookForm.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
       ebookForm.reset();
-      document.getElementById('ebook-success').hidden = false;
+      document.getElementById("ebook-success").hidden = false;
     });
   }
 

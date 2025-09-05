@@ -1115,54 +1115,63 @@ body.loading-complete .animate-on-scroll.is-visible {
 }
 
 /* ---- Mobiele navigatie ---- */
-.hamburger { 
-  display:inline-flex; 
-  flex-direction:column; 
-  gap:6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1001;
-  position: absolute;
-  top: 50%;
-  right: 2rem;
-  transform: translateY(-50%);
+.hamburger {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
 }
-.hamburger .bar { 
-  width:26px; 
-  height:2px; 
-  background:currentColor; 
-  transition:transform .25s, opacity .25s; 
+
+.hamburger .bar {
+    width: 26px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .25s, opacity .25s;
 }
-#nav-toggle[aria-expanded="true"] .bar-1 { 
-  transform: translateY(8px) rotate(45deg); 
+
+#nav-toggle[aria-expanded="true"] .bar-1 {
+    transform: translateY(8px) rotate(45deg);
 }
-#nav-toggle[aria-expanded="true"] .bar-2 { 
-  opacity:0; 
+
+#nav-toggle[aria-expanded="true"] .bar-2 {
+    opacity: 0;
 }
-#nav-toggle[aria-expanded="true"] .bar-3 { 
-  transform: translateY(-8px) rotate(-45deg); 
+
+#nav-toggle[aria-expanded="true"] .bar-3 {
+    transform: translateY(-8px) rotate(-45deg);
 }
-.nav-open { 
-  overflow:hidden; 
+
+.nav-open {
+    overflow: hidden;
 }
-.nav-overlay { 
-  position:fixed; 
-  inset:0; 
-  display:grid; 
-  place-items:center; 
-  backdrop-filter:blur(6px); 
-  background:rgba(0,0,0,.35); 
-  z-index: 999;
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, .35);
+    z-index: 999;
 }
+
 .nav-overlay ul {
     list-style: none;
     text-align: center;
 }
+
 .nav-overlay li {
     margin-bottom: 1.5rem;
 }
+
 .nav-overlay a {
     color: var(--color-light);
     font-family: var(--font-heading);
@@ -1171,12 +1180,13 @@ body.loading-complete .animate-on-scroll.is-visible {
     text-decoration: none;
     padding: 0 1rem;
 }
-[hidden] { 
-  display:none !important; 
+
+[hidden] {
+    display: none !important;
 }
 
 .hp {
-  display: none;
+    display: none;
 }
 
 @media (min-width: 769px) {
