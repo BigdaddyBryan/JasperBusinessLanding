@@ -12,6 +12,9 @@
     --gold-600: #B58F3E;
     --gold-700: #A07F34;
     --focus-ring: var(--brand-gold);
+    --black: #000000;
+    --near-black: #0B0F14;
+    --overlay-dark: rgba(0, 0, 0, 0.65);
 
     /* Legacy variables mapped to new brand colors */
     --color-primary: var(--brand-gold);
@@ -19,19 +22,19 @@
     /* Retain original dark for specific sections */
     --color-dark-green: var(--navy-700);
     --color-light: var(--on-navy);
-    --color-text: #cccccc;
+    --color-text: #E5E7EB;
     /* Legacy light text on dark bg */
     --font-heading: "Oswald", sans-serif;
     --font-body: "Roboto", sans-serif;
 }
 
 a {
-    color: var(--brand-gold);
+    color: var(--color-light);
     text-underline-offset: .15em;
 }
 
 a:hover {
-    color: var(--gold-600);
+    color: var(--brand-gold);
 }
 
 * {
@@ -89,7 +92,7 @@ body.no-scroll {
 #preloader {
     position: fixed;
     inset: 0;
-    background: var(--color-dark);
+    background: var(--black);
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -130,7 +133,7 @@ body.no-scroll {
 .header-background {
     position: absolute;
     inset: 0;
-    background: rgba(0, 43, 76, .8);
+    background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 43, 76, .70));
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(201, 161, 77, .1);
     transform: translateY(-100%);
@@ -296,6 +299,7 @@ h2 {
     text-transform: uppercase;
     margin-bottom: 3rem;
     text-align: center;
+    color: var(--color-light);
 }
 
 h1,
@@ -329,7 +333,7 @@ p {
     font-family: var(--font-heading);
     text-transform: uppercase;
     text-decoration: none;
-    border: 2px solid var(--color-primary);
+    border: 1px solid var(--color-primary);
     border-radius: 6px;
     font-weight: 700;
     transition: all .25s cubic-bezier(.2, .8, .2, 1);
@@ -418,7 +422,7 @@ p {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 43, 76, .7);
+    background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 43, 76, .55));
     z-index: -1;
 }
 
@@ -514,7 +518,16 @@ body.loading-complete .scroll-indicator {
 
 /* ---- OVER ONS ---- */
 #over-ons {
-    background: var(--color-dark);
+    background: var(--surface);
+}
+
+#over-ons h2,
+#over-ons .trainer-profile h3 {
+    color: var(--text);
+}
+
+#over-ons .trainer-profile p {
+    color: var(--muted);
 }
 
 .about-grid {
@@ -545,6 +558,8 @@ body.loading-complete .scroll-indicator {
     position: relative;
     z-index: 1;
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 }
 
 .trainers-grid {
@@ -597,7 +612,7 @@ body.loading-complete .scroll-indicator {
 .program-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 43, 76, .9);
+    background: linear-gradient(180deg, rgba(0, 0, 0, .45) 0%, rgba(0, 43, 76, .82) 100%);
     z-index: -1;
 }
 
@@ -711,7 +726,7 @@ body.loading-complete .scroll-indicator {
 
 /* ---- REVIEWS ---- */
 #reviews {
-    background: var(--color-dark);
+    background: linear-gradient(180deg, var(--brand-navy) 0%, var(--navy-700) 100%);
 }
 
 .swiper {
@@ -807,11 +822,13 @@ body.loading-complete .scroll-indicator {
 }
 
 .contact-form-wrapper {
-    background: var(--navy-700);
+    background: var(--navy-600);
     padding: 2.4rem;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 #contact-form .form-group {
@@ -952,7 +969,7 @@ body.loading-complete .scroll-indicator {
 .main-footer {
     text-align: center;
     padding: 2rem;
-    background: var(--color-dark);
+    background: var(--brand-navy);
 }
 
 .main-footer p {
@@ -1059,13 +1076,13 @@ body.loading-complete .animate-on-scroll.is-visible {
 
 /* ---- REDUCED MOTION ---- */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-
     html {
         scroll-behavior: auto;
+    }
+
+    .btn {
+        animation: none !important;
+        transition: none !important;
     }
 
     #hero:hover .hero-video-reveal {
