@@ -1,14 +1,14 @@
 /* ---- BASIS & VARIABELEN ---- */
 :root {
     --brand-gold: #C9A14D;
-    --brand-navy: #002B4C;
+    --brand-navy: #1A2733;
     --surface: #fff;
     --text: #0B1220;
     --muted: #6B7280;
     --on-navy: #fff;
     --on-gold: #0B1220;
-    --navy-600: #01355E;
-    --navy-700: #012845;
+    --navy-600: #142029;
+    --navy-700: #0F1820;
     --gold-600: #B58F3E;
     --gold-700: #A07F34;
     --focus-ring: var(--brand-gold);
@@ -133,7 +133,7 @@ body.no-scroll {
 .header-background {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 43, 76, .70));
+    background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(26, 39, 51, .70));
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(201, 161, 77, .1);
     transform: translateY(-100%);
@@ -208,7 +208,7 @@ body.no-scroll {
 .nav-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 43, 76, .95);
+    background: rgba(26, 39, 51, .95);
     backdrop-filter: blur(20px);
     z-index: 999;
     display: flex;
@@ -422,7 +422,7 @@ p {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 43, 76, .55));
+    background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(26, 39, 51, .55));
     z-index: -1;
 }
 
@@ -612,7 +612,7 @@ body.loading-complete .scroll-indicator {
 .program-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .45) 0%, rgba(0, 43, 76, .82) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, .45) 0%, rgba(26, 39, 51, .82) 100%);
     z-index: -1;
 }
 

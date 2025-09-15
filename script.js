@@ -70,19 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // HEADER BG show/hide on scroll
-  const headerBg = $(".header-background");
-  let lastY = window.scrollY;
-  if (headerBg) {
-    window.addEventListener("scroll", () => {
-      const y = window.scrollY;
-      if (y > lastY && y > 50) headerBg.classList.remove("is-visible");
-      else if (y < lastY) headerBg.classList.add("is-visible");
-      else if (y <= 50) headerBg.classList.remove("is-visible");
-      lastY = y;
-    });
-  }
-
   // NAV OVERLAY
   const toggle = document.getElementById("nav-toggle");
   const overlay = document.getElementById("nav-overlay");
