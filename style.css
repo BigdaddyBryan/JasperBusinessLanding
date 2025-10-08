@@ -940,6 +940,26 @@ body.loading-complete .scroll-indicator {
     min-height: 400px;
 }
 
+.program-media {
+    display: none;
+    margin-bottom: 1.6rem;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 38px -24px rgba(0, 0, 0, .6);
+    aspect-ratio: 16 / 10;
+}
+
+.program-media picture,
+.program-media img {
+    display: block;
+    width: 100%;
+}
+
+.program-media img {
+    height: auto;
+    object-fit: cover;
+}
+
 .content-panel {
     position: absolute;
     inset: 0 auto auto 0;
@@ -1455,6 +1475,10 @@ body.loading-complete .animate-on-scroll.is-visible {
     .program-content {
         min-height: auto;
         margin-top: 1.6rem;
+    }
+
+    .program-media {
+        display: block;
     }
 
     #ebook-form .form-group {
