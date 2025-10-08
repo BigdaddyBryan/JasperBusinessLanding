@@ -517,9 +517,27 @@ body.loading-complete .scroll-indicator {
 }
 
 /* ---- OVER ONS ---- */
+.container-wide {
+    width: 100%;
+    max-width: 1600px;
+    /* Nog breder */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 #over-ons {
     background: linear-gradient(140deg, #f3efe6 0%, #ffffff 55%, #f6eddc 100%);
     color: var(--text);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+#over-ons .about-wrapper {
+    margin-bottom: 5rem;
+}
+
+#over-ons .trainers-grid {
+    margin-top: 5rem;
 }
 
 #over-ons h2 {
@@ -543,10 +561,14 @@ body.loading-complete .scroll-indicator {
     margin-bottom: 1.5rem;
 }
 
+#over-ons>.container {
+    max-width: 1200px;
+}
+
 .about-wrapper {
     display: grid;
-    grid-template-columns: minmax(260px, .9fr) minmax(320px, 1.1fr);
-    gap: 3.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
     align-items: stretch;
     margin-bottom: 5rem;
 }
@@ -555,7 +577,6 @@ body.loading-complete .scroll-indicator {
     position: relative;
     border-radius: 18px;
     overflow: hidden;
-    min-height: 100%;
     box-shadow: 0 25px 45px rgba(15, 24, 32, .25);
 }
 
@@ -594,7 +615,8 @@ body.loading-complete .scroll-indicator {
 .about-card {
     background: linear-gradient(160deg, rgba(10, 16, 24, .92), rgba(22, 34, 47, .92));
     border-radius: 22px;
-    padding: 3.4rem;
+    padding: 2.5rem;
+    /* Padding iets verminderd */
     position: relative;
     isolation: isolate;
     overflow: hidden;
