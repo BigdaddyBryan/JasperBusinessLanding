@@ -1345,6 +1345,19 @@ body.loading-complete .animate-on-scroll.is-visible {
 
 @media (max-width: 900px) {
 
+    #hero {
+        min-height: auto;
+        padding: 5.5rem 0 4.5rem;
+    }
+
+    .hero-content {
+        max-width: 520px;
+    }
+
+    #over-ons h2 {
+        text-align: center;
+    }
+
     .about-wrapper,
     .contact-grid,
     .ebook-grid {
@@ -1455,6 +1468,35 @@ body.loading-complete .animate-on-scroll.is-visible {
     .contact-intro {
         margin-bottom: 2.6rem;
     }
+
+    .hero-video-reveal {
+        display: none;
+    }
+
+    .hero-static-background {
+        filter: brightness(.65);
+    }
+
+    .hero-content {
+        padding: 2.2rem 1.4rem 2rem;
+    }
+
+    #programma {
+        padding: 4.5rem 0;
+        background: linear-gradient(180deg, rgba(15, 24, 32, .94) 0%, rgba(10, 16, 24, .98) 100%);
+    }
+
+    .program-backgrounds,
+    .program-overlay {
+        display: none;
+    }
+
+    .program-container {
+        background: rgba(9, 13, 19, .85);
+        padding: 2.4rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 24px 45px -28px rgba(3, 5, 9, .7);
+    }
 }
 
 @media (max-width: 640px) {
@@ -1466,8 +1508,12 @@ body.loading-complete .animate-on-scroll.is-visible {
         padding: 4.5rem 0;
     }
 
+    #hero {
+        padding: 4.5rem 0 3.5rem;
+    }
+
     .hero-content {
-        padding: 1.5rem 1rem;
+        padding: 2rem 1.2rem 1.8rem;
     }
 
     .hero-title {
@@ -1492,6 +1538,15 @@ body.loading-complete .animate-on-scroll.is-visible {
 
     .about-card {
         padding: 2.4rem 2rem;
+    }
+
+    #over-ons {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+
+    #over-ons .about-wrapper {
+        margin-bottom: 3.5rem;
     }
 
     .about-lead {
@@ -1527,6 +1582,10 @@ body.loading-complete .animate-on-scroll.is-visible {
         padding: 2rem;
         text-align: center;
         align-items: center;
+    }
+
+    .program-container {
+        padding: 2rem 1.5rem;
     }
 
     .trainer-tags {
@@ -1633,6 +1692,14 @@ body.loading-complete .animate-on-scroll.is-visible {
         padding: 3.75rem 0;
     }
 
+    #hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.9rem, 9vw, 3.1rem);
+    }
+
     .stat-card {
         padding: 1.2rem 1rem;
     }
@@ -1656,6 +1723,10 @@ body.loading-complete .animate-on-scroll.is-visible {
 
     .contact-form-wrapper {
         padding: 2rem;
+    }
+
+    .program-container {
+        padding: 1.8rem 1.4rem;
     }
 }
 
