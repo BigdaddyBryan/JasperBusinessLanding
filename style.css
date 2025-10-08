@@ -744,6 +744,13 @@ body.loading-complete .scroll-indicator {
 .trainer-media {
     position: relative;
     overflow: hidden;
+    aspect-ratio: 4 / 5;
+    width: 100%;
+}
+
+.trainer-media picture {
+    display: block;
+    height: 100%;
 }
 
 .trainer-media::after {
