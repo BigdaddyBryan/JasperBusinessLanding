@@ -1077,24 +1077,23 @@
                   id="contact-form"
                   name="contact-form"
                   method="POST"
+                  action="/bedankt.html"
                   data-netlify="true"
-                  novalidate
+                  data-netlify-honeypot="bot-field"
                 >
                   <input type="hidden" name="form-name" value="contact-form" />
-                  <input
-                    type="text"
-                    name="_gotcha"
-                    class="hp"
-                    tabindex="-1"
-                    autocomplete="off"
-                    aria-hidden="true"
-                  />
+                  <p hidden>
+                    <label>
+                      Don't fill this out if you're human: <input name="bot-field" />
+                    </label>
+                  </p>
                   <div class="form-grid">
                     <div class="form-field">
                       <label class="field-label" for="contact-name">Naam</label>
                       <input
                         id="contact-name"
                         name="name"
+                        type="text"
                         required
                         placeholder="Jouw naam"
                       />
@@ -1132,13 +1131,13 @@
                       <option value="" disabled selected>
                         Selecteer een optie
                       </option>
-                      <option value="call">Telefonisch gesprek</option>
-                      <option value="video">Video-intake</option>
-                      <option value="mail">Antwoord per e-mail</option>
+                      <option value="Telefonisch gesprek">Telefonisch gesprek</option>
+                      <option value="Video-intake">Video-intake</option>
+                      <option value="Antwoord per e-mail">Antwoord per e-mail</option>
                     </select>
                   </div>
                   <label class="consent-line">
-                    <input type="checkbox" name="consent" required />
+                    <input type="checkbox" name="consent" value="Ja, ik ga akkoord" required />
                     <span>
                       Ik ga akkoord dat mijn gegevens uitsluitend worden
                       gebruikt om op mijn aanvraag te reageren.
@@ -1161,8 +1160,11 @@
                       >.
                     </p>
                   </div>
-                  <p id="contact-success" hidden>
-                    Bedankt! We reageren zo snel mogelijk.
+                  <p id="contact-success" class="success-message" hidden>
+                    ✓ Bedankt! Je bericht is verzonden. We nemen binnen 24 uur contact met je op.
+                  </p>
+                  <p id="contact-error" class="error-message" hidden>
+                    Er ging iets mis. Probeer het opnieuw of bel ons direct.
                   </p>
                 </form>
               </div>

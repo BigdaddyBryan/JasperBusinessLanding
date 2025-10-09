@@ -174,55 +174,12 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollEls.forEach((el) => io.observe(el));
   }
 
-  // CONTACT FORM
-  const contactForm = document.getElementById("contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      try {
-        const response = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
-        });
-        if (response.ok) {
-          contactForm.reset();
-          document.getElementById("contact-success").hidden = false;
-        } else {
-          throw new Error("Form submission failed");
-        }
-      } catch (error) {
-        console.error(error);
-        alert("Er is iets misgegaan. Probeer het later opnieuw.");
-      }
-    });
-  }
+  // CONTACT FORM - Pure Netlify Forms (no JavaScript needed)
+  // Netlify handles form submissions automatically with data-netlify="true"
+  // Forms will redirect to the thank you page or show success message
+  // Check submissions in: Netlify Dashboard > Forms
 
-  // EBOOK FORM
-  const ebookForm = document.getElementById("ebook-form");
-  if (ebookForm) {
-    ebookForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(ebookForm);
-      try {
-        const response = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
-        });
-        if (response.ok) {
-          ebookForm.reset();
-          document.getElementById("ebook-success").hidden = false;
-        } else {
-          throw new Error("Form submission failed");
-        }
-      } catch (error) {
-        console.error(error);
-        alert("Er is iets misgegaan. Probeer het later opnieuw.");
-      }
-    });
-  }
+  // EBOOK FORM - Removed (no longer needed)
 
   // Footer year
   const yearEl = $("#year");

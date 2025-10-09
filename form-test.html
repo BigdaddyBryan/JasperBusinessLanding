@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Test - Missie Weerbaarheid</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: #f5f5f5;
+      }
+      h1 {
+        color: #1a2733;
+      }
+      .status {
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+        display: none;
+      }
+      .status.show {
+        display: block;
+      }
+      .success {
+        background: #d1fae5;
+        color: #065f46;
+        border: 1px solid #10b981;
+      }
+      .error {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #ef4444;
+      }
+      .info {
+        background: #dbeafe;
+        color: #1e40af;
+        border: 1px solid #3b82f6;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+      form {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #374151;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        font-size: 1rem;
+      }
+      button {
+        width: 100%;
+        padding: 1rem;
+        background: #c9a14d;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #b58f3e;
+      }
+      button:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+      }
+      .checkbox-wrapper {
+        display: flex;
+        align-items: start;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .checkbox-wrapper input {
+        width: auto;
+        margin: 0;
+      }
+      .form-data {
+        background: #f9fafb;
+        padding: 1rem;
+        border-radius: 6px;
+        margin-top: 1rem;
+        font-family: monospace;
+        font-size: 0.9rem;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📋 Formulier Test Pagina</h1>
+
+    <div class="info">
+      <strong>🧪 Test Modus</strong><br />
+      Deze pagina simuleert hoe het formulier werkt. Vul het in om te testen. De
+      data wordt NIET echt verzonden, maar je ziet wel wat er verzonden zou
+      worden.
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <form id="test-form">
+      <h2>Contact Formulier</h2>
+
+      <label for="name">Naam *</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Jouw naam"
+      />
+
+      <label for="email">E-mail *</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="naam@bedrijf.nl"
+      />
+
+      <label for="message">Bericht *</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        required
+        placeholder="Beschrijf kort je doelen, teamgrootte en gewenste timing."
+      ></textarea>
+
+      <label for="preference">Voorkeur voor contact *</label>
+      <select id="preference" name="preference" required>
+        <option value="">Selecteer een optie</option>
+        <option value="Telefonisch gesprek">Telefonisch gesprek</option>
+        <option value="Video-intake">Video-intake</option>
+        <option value="Antwoord per e-mail">Antwoord per e-mail</option>
+      </select>
+
+      <div class="checkbox-wrapper">
+        <input
+          type="checkbox"
+          id="consent"
+          name="consent"
+          value="Ja, ik ga akkoord"
+          required
+        />
+        <label for="consent" style="margin: 0; font-weight: normal">
+          Ik ga akkoord dat mijn gegevens uitsluitend worden gebruikt om op mijn
+          aanvraag te reageren.
+        </label>
+      </div>
+
+      <button type="submit">Verstuur aanvraag (TEST)</button>
+    </form>
+
+    <div id="form-data" class="form-data" style="display: none"></div>
+
+    <script>
+      const form = document.getElementById("test-form");
+      const status = document.getElementById("status");
+      const formDataDisplay = document.getElementById("form-data");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = {};
+
+        for (let [key, value] of formData.entries()) {
+          data[key] = value;
+        }
+
+        // Show success message
+        status.className = "status success show";
+        status.textContent =
+          "✓ Formulier is correct ingevuld! Op Netlify zou dit nu verzonden worden.";
+
+        // Show form data
+        formDataDisplay.style.display = "block";
+        formDataDisplay.textContent =
+          "📤 Data die verzonden zou worden:\n\n" +
+          JSON.stringify(data, null, 2);
+
+        // Scroll to status
+        status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+        console.log("Form data:", data);
+
+        // Simulate redirect after 2 seconds
+        setTimeout(() => {
+          if (
+            confirm(
+              "Op Netlify zou je nu doorgestuurd worden naar bedankt.html. Wil je deze pagina zien?"
+            )
+          ) {
+            window.location.href = "bedankt.html";
+          }
+        }, 2000);
+      });
+
+      // Real-time validation feedback
+      const inputs = form.querySelectorAll("input, textarea, select");
+      inputs.forEach((input) => {
+        input.addEventListener("invalid", function () {
+          status.className = "status error show";
+          status.textContent = "❌ Vul alle verplichte velden in";
+        });
+      });
+    </script>
+  </body>
+</html>
