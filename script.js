@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll("[data-navlink]")
     .forEach((a) => a.addEventListener("click", closeNav));
 
-  // PROGRAMMA tabs
+  // PROGRAMMA tabs (alleen actief op desktop)
   const pillarItems = $$(".pillar-item");
   if (pillarItems.length) {
     pillarItems.forEach((item) => {
