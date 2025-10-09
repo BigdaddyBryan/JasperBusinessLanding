@@ -2360,8 +2360,9 @@ body.loading-complete .animate-on-scroll.is-visible {
 
 #hero-rotate {
     display: inline-block;
-    min-width: 9ch;
+    min-width: 10.5ch;
     /* voorkomt layout jump bij wisselen */
+    text-align: center;
     opacity: 1;
     transition: opacity .28s ease, transform .28s ease;
 }
