@@ -175,18 +175,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // CONTACT FORM
-  const contactForm = document.getElementById("contact");
+  const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const data = new FormData(contactForm);
-      const res = await fetch(contactForm.action, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-      contactForm.reset();
-      document.getElementById("contact-success").hidden = false;
+      const formData = new FormData(contactForm);
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        });
+        if (response.ok) {
+          contactForm.reset();
+          document.getElementById("contact-success").hidden = false;
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Er is iets misgegaan. Probeer het later opnieuw.");
+      }
     });
   }
 
@@ -195,14 +204,23 @@ document.addEventListener("DOMContentLoaded", () => {
   if (ebookForm) {
     ebookForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const data = new FormData(ebookForm);
-      const res = await fetch(ebookForm.action, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-      ebookForm.reset();
-      document.getElementById("ebook-success").hidden = false;
+      const formData = new FormData(ebookForm);
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        });
+        if (response.ok) {
+          ebookForm.reset();
+          document.getElementById("ebook-success").hidden = false;
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Er is iets misgegaan. Probeer het later opnieuw.");
+      }
     });
   }
 

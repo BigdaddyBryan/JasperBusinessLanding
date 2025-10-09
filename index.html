@@ -899,9 +899,11 @@
               </p>
               <form
                 id="ebook-form"
-                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                name="ebook-form"
                 method="POST"
+                data-netlify="true"
               >
+                <input type="hidden" name="form-name" value="ebook-form" />
                 <div class="form-group">
                   <input
                     type="email"
@@ -1045,11 +1047,13 @@
                   </p>
                 </div>
                 <form
-                  id="contact"
-                  action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                  id="contact-form"
+                  name="contact-form"
                   method="POST"
+                  data-netlify="true"
                   novalidate
                 >
+                  <input type="hidden" name="form-name" value="contact-form" />
                   <input
                     type="text"
                     name="_gotcha"
@@ -1058,7 +1062,6 @@
                     autocomplete="off"
                     aria-hidden="true"
                   />
-                  <div class="form-grid">
                     <div class="form-field">
                       <label class="field-label" for="contact-name">Naam</label>
                       <input
