@@ -963,31 +963,57 @@
                   </p>
                 </div>
 
-                <div class="contact-actions">
-                  <a
-                    class="btn btn-primary contact-action"
-                    href="tel:+31614562149"
-                  >
-                    <span class="btn-text-main">Bel Robert</span>
-                    <span class="btn-text-icon"
-                      ><i class="fas fa-phone" aria-hidden="true"></i
-                    ></span>
-                  </a>
-                  <a
-                    class="btn btn-primary contact-action"
-                    href="tel:+31624556521"
-                  >
-                    <span class="btn-text-main">Bel Jasper</span>
-                    <span class="btn-text-icon"
-                      ><i class="fas fa-phone" aria-hidden="true"></i
-                    ></span>
-                  </a>
-                  <a
-                    class="btn btn-ghost contact-action"
-                    href="mailto:info@missieweerbaarheid.nl"
-                  >
-                    Mail ons team
-                  </a>
+                <div class="contact-options" aria-label="Manieren om contact op te nemen">
+                  <article class="contact-option contact-option--call">
+                    <div class="contact-option-header">
+                      <div class="contact-option-icon" aria-hidden="true">
+                        <i class="fas fa-phone"></i>
+                      </div>
+                      <div class="contact-option-text">
+                        <h4>Bel direct</h4>
+                        <p>Bereik Robert of Jasper voor een gesprek vandaag.</p>
+                      </div>
+                    </div>
+                    <div class="contact-option-actions">
+                      <a
+                        class="btn btn-primary contact-action"
+                        href="tel:+31614562149"
+                      >
+                        <span class="btn-text-main">Bel Robert</span>
+                        <span class="btn-text-icon"
+                          ><i class="fas fa-phone" aria-hidden="true"></i
+                        ></span>
+                      </a>
+                      <a
+                        class="btn btn-primary contact-action"
+                        href="tel:+31624556521"
+                      >
+                        <span class="btn-text-main">Bel Jasper</span>
+                        <span class="btn-text-icon"
+                          ><i class="fas fa-phone" aria-hidden="true"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </article>
+                  <article class="contact-option contact-option--plan">
+                    <div class="contact-option-header">
+                      <div class="contact-option-icon" aria-hidden="true">
+                        <i class="fas fa-calendar-alt"></i>
+                      </div>
+                      <div class="contact-option-text">
+                        <h4>Plan een intake</h4>
+                        <p>Laat je gegevens achter en ontvang binnen één werkdag een voorstel.</p>
+                      </div>
+                    </div>
+                    <div class="contact-option-actions">
+                      <a class="btn btn-ghost contact-action" href="#contact-form">
+                        Naar het formulier
+                      </a>
+                      <a class="contact-mail" href="mailto:info@missieweerbaarheid.nl">
+                        info@missieweerbaarheid.nl
+                      </a>
+                    </div>
+                  </article>
                 </div>
 
                 <div class="contact-meta" aria-label="Contactinformatie">
@@ -1062,6 +1088,7 @@
                     autocomplete="off"
                     aria-hidden="true"
                   />
+                  <div class="form-grid">
                     <div class="form-field">
                       <label class="field-label" for="contact-name">Naam</label>
                       <input
