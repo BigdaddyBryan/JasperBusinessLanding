@@ -1842,10 +1842,6 @@ body.loading-complete .animate-on-scroll.is-visible {
     .program-container {
         gap: 3rem;
     }
-
-    .ebook-grid {
-        gap: 3.5rem;
-    }
 }
 
 @media (max-width: 1024px) {
@@ -1875,10 +1871,6 @@ body.loading-complete .animate-on-scroll.is-visible {
 
     /* Tablet programma regels verwijderd - zie nieuwe programma sectie CSS */
 
-    .ebook-grid {
-        gap: 3rem;
-    }
-
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2.8rem;
@@ -1901,33 +1893,8 @@ body.loading-complete .animate-on-scroll.is-visible {
     }
 
     .about-wrapper,
-    .contact-grid,
-    .ebook-grid {
+    .contact-grid {
         grid-template-columns: 1fr;
-    }
-
-    .ebook-grid {
-        gap: 2.5rem;
-        text-align: center;
-    }
-
-    .ebook-image-wrapper {
-        margin: 0 auto;
-        max-width: 320px;
-        /* Iets groter voor betere weergave */
-    }
-
-    .ebook-content h2 {
-        text-align: center;
-    }
-
-    .ebook-content p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #ebook-form {
-        justify-content: center;
     }
 
     .about-media {
@@ -2014,14 +1981,6 @@ body.loading-complete .animate-on-scroll.is-visible {
     .program-media {
         display: block;
         margin-bottom: 1.5rem;
-    }
-
-    #ebook-form .form-group {
-        width: 100%;
-    }
-
-    #ebook-form .btn {
-        width: 100%;
     }
 
     .contact-intro {
@@ -2133,14 +2092,6 @@ body.loading-complete .animate-on-scroll.is-visible {
     }
 
     /* Oude 640px programma regels verwijderd - zie nieuwe programma sectie CSS */
-
-    .ebook-grid {
-        gap: 2rem;
-    }
-
-    .ebook-content p {
-        font-size: 1rem;
-    }
 
     .contact-grid {
         gap: 2rem;
@@ -2629,96 +2580,6 @@ body.loading-complete .animate-on-scroll.is-visible {
     .hamburger {
         display: none;
     }
-}
-
-/* ---- EBOOK LEAD MAGNET ---- */
-#ebook {
-    background: var(--navy-600);
-}
-
-.ebook-grid {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    align-items: center;
-    gap: 4rem;
-}
-
-.ebook-image-wrapper img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .3);
-    transform: rotate(-3deg) scale(1.02);
-    transition: transform .4s cubic-bezier(.2, .8, .2, 1);
-}
-
-.ebook-image-wrapper:hover img {
-    transform: rotate(0) scale(1);
-}
-
-.ebook-content h2 {
-    text-align: left;
-    margin-bottom: 1rem;
-}
-
-.ebook-content p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    max-width: 55ch;
-}
-
-#ebook-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-}
-
-#ebook-form .form-group {
-    flex-grow: 1;
-}
-
-#ebook-form input[type="email"] {
-    width: 100%;
-    padding: 1rem 1.2rem;
-    border-radius: 6px;
-    border: 1px solid rgba(201, 161, 77, .2);
-    background: rgba(26, 39, 51, .85);
-    color: var(--color-light);
-    font-size: 1rem;
-    transition: border-color .2s, box-shadow .2s;
-}
-
-#ebook-form input[type="email"]::placeholder {
-    color: rgba(229, 231, 235, .4);
-}
-
-#ebook-form input[type="email"]:focus {
-    border-color: var(--brand-gold);
-    background: rgba(26, 39, 51, .95);
-    box-shadow: 0 0 0 3px rgba(201, 161, 77, .25);
-    outline: none;
-}
-
-#ebook-form .btn {
-    padding: 1.1rem 1.8rem;
-    /* Iets hoger voor alignment */
-}
-
-#ebook-form .consent {
-    width: 100%;
-    font-size: .85rem;
-    color: rgba(229, 231, 235, .65);
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    margin-top: .5rem;
-}
-
-#ebook-form .consent input {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--brand-gold);
 }
 
 .sr-only {
