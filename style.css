@@ -1968,6 +1968,11 @@ body.loading-complete .animate-on-scroll.is-visible {
         padding: 2.2rem 1.4rem 2rem;
     }
 
+    .media-label {
+        display: none;
+        /* Verberg "Actieve dienst" label op mobiel */
+    }
+
     /* Oude programma regels verwijderd - zie nieuwe programma sectie CSS */
 }
 
