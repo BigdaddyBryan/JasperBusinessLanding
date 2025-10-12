@@ -1309,6 +1309,236 @@ body.loading-complete .scroll-indicator {
 
 /* Beide versies nu actief - desktop interactive en mobile cards */
 
+/* ---- TRAINING: ZELFDETERMINATIETHEORIE ---- */
+
+#training-zdt {
+    background: linear-gradient(180deg, rgba(10, 16, 24, .98) 0%, rgba(6, 10, 16, .98) 100%);
+    border-top: 1px solid rgba(255, 255, 255, .05);
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.training-zdt-header {
+    max-width: 760px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+}
+
+.training-zdt h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.training-zdt-lead {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(229, 231, 235, .85);
+}
+
+.training-zdt-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+    gap: 3.2rem;
+    align-items: start;
+}
+
+.training-zdt-copy p {
+    margin-bottom: 1.6rem;
+}
+
+.training-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.pillar-card {
+    background: rgba(14, 22, 32, .9);
+    border: 1px solid rgba(201, 161, 77, .2);
+    border-radius: 18px;
+    padding: 1.8rem;
+    box-shadow: 0 22px 48px -32px rgba(0, 0, 0, .6);
+    transition: transform .35s cubic-bezier(.2, .8, .2, 1), border-color .35s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201, 161, 77, .45);
+}
+
+.pillar-card h3 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: .8rem;
+}
+
+.pillar-card p {
+    color: rgba(229, 231, 235, .78);
+    line-height: 1.6;
+}
+
+.training-zdt-benefits {
+    background: rgba(12, 19, 28, .85);
+    border-radius: 26px;
+    border: 1px solid rgba(255, 255, 255, .06);
+    padding: 2.4rem;
+    box-shadow: 0 24px 60px -32px rgba(0, 0, 0, .65);
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+.training-zdt-benefits h3 {
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 1rem;
+    margin-bottom: .8rem;
+}
+
+.training-zdt-benefits p {
+    color: rgba(229, 231, 235, .75);
+}
+
+.training-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.training-benefits li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.6rem;
+    align-items: start;
+}
+
+.benefit-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(201, 161, 77, .28), rgba(201, 161, 77, .12));
+    border: 1px solid rgba(201, 161, 77, .45);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.35rem;
+    box-shadow: inset 0 0 12px rgba(201, 161, 77, .35);
+}
+
+.training-benefits h4 {
+    margin-bottom: .6rem;
+    font-size: 1.05rem;
+    text-transform: none;
+    letter-spacing: .02em;
+    color: var(--color-light);
+}
+
+.training-cta {
+    background: rgba(201, 161, 77, .12);
+    border: 1px solid rgba(201, 161, 77, .35);
+    border-radius: 20px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.training-cta p {
+    color: rgba(229, 231, 235, .85);
+    line-height: 1.7;
+}
+
+@media (max-width: 1200px) {
+    .training-zdt-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .training-zdt-benefits {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .training-pillars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .training-zdt-header {
+        margin-bottom: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #training-zdt {
+        padding: 6rem 0;
+    }
+
+    .training-zdt-lead {
+        font-size: .98rem;
+    }
+
+    .training-zdt-benefits {
+        padding: 2rem;
+    }
+
+    .training-benefits li {
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .training-pillars {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .training-zdt-benefits {
+        padding: 1.6rem;
+    }
+
+    .benefit-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
+    }
+
+    .training-benefits h4 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .training-zdt h2 {
+        font-size: clamp(1.8rem, 8vw, 2.2rem);
+    }
+
+    .training-zdt-header {
+        text-align: left;
+    }
+
+    .training-zdt h2,
+    .training-zdt-header .section-kicker {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .training-zdt-lead {
+        text-align: left;
+    }
+
+    .training-benefits li {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-icon {
+        justify-self: flex-start;
+    }
+}
+
 /* ---- REVIEWS ---- */
 #reviews {
     background: linear-gradient(180deg, var(--brand-navy) 0%, var(--navy-700) 100%);
