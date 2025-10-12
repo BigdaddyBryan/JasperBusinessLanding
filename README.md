@@ -75,3 +75,19 @@ Het contact formulier verzamelt:
 ## Contact
 
 Voor vragen: info@missieweerbaarheid.nl
+
+## Laatste wijzigingen toepassen
+
+De recente aanpassingen zijn doorgevoerd in de bestanden `index.html` en `style.css` in de root van dit project. Om deze in jouw live omgeving te gebruiken, kopieer je simpelweg de geüpdatete versies van deze bestanden naar je productieomgeving.
+
+1. Open de repo op je eigen machine en haal de laatste wijzigingen op:
+   ```bash
+   git pull
+   ```
+2. Controleer de bijgewerkte onderdelen:
+   - Trainerprofielen: nieuwe expertise-tags en geen ranglabels meer.
+   - Programma-sectie: "Dagelijkse Routine" is vervangen door uitgebreide ZDT-informatie (desktop + mobiel).
+   - Hero- en contactsecties: beelduitlijning en subtiteltekst aangepast.
+3. Publiceer daarna de site op de gebruikelijke manier (bijv. commit & push naar Netlify, of upload de HTML/CSS-bestanden naar je hosting).
+
+Wil je de wijzigingen handmatig overnemen in een bestaand bestand, vergelijk dan jouw `index.html` en `style.css` met de versies in deze repository en kopieer de aangepaste secties. Met een tool zoals [Meld](https://meldmerge.org/) of de `git diff`-output kun je precies zien welke regels gewijzigd zijn.
