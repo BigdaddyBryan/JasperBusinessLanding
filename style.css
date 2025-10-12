@@ -419,6 +419,7 @@ p {
     inset: 0;
     z-index: -3;
     background: url('images/Jasper_Robert_landing.jpg') center/cover no-repeat;
+    background-position: 50% 35%;
 }
 
 .hero-video-reveal {
@@ -437,6 +438,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 50% 35%;
 }
 
 .hero-overlay {
