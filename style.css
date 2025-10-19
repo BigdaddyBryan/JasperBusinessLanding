@@ -1328,6 +1328,12 @@ body.loading-complete .scroll-indicator {
     margin-bottom: 1.5rem;
 }
 
+.training-zdt-header h2 {
+    word-break: break-word;
+    hyphens: auto;
+    text-wrap: balance;
+}
+
 .training-zdt-lead {
     font-size: 1.05rem;
     line-height: 1.8;
