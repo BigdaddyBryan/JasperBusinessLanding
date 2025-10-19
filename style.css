@@ -164,7 +164,7 @@ body.no-scroll {
 }
 
 .header-logo img {
-    height: 100px;
+    height: 120px;
     width: auto;
     transition: transform .4s ease;
 }
