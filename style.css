@@ -1311,6 +1311,10 @@ body.loading-complete .scroll-indicator {
 
 /* ---- TRAINING: ZELFDETERMINATIETHEORIE ---- */
 
+#training-zdt .container {
+    max-width: 1300px;
+}
+
 #training-zdt {
     background: linear-gradient(180deg, rgba(10, 16, 24, .98) 0%, rgba(6, 10, 16, .98) 100%);
     border-top: 1px solid rgba(255, 255, 255, .05);
