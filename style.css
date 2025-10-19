@@ -1341,7 +1341,7 @@ body.loading-complete .scroll-indicator {
 .training-zdt-lead {
     font-size: 1.05rem;
     line-height: 1.8;
-    color: rgba(229, 231, 235, .85);
+    color: var(--color-light);
 }
 
 .training-zdt-grid {
